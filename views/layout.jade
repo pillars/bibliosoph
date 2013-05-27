@@ -1,14 +1,18 @@
 !!!5
 html
   head
-    title #{title} - Bibliosoph
+    title #{title} - #{site.name}
     link(rel='stylesheet', href='/css/style.css')
   body
     header.page-head
-      a(class="logo", href="/") Bibliosoph
+      a(class="logo", href="/") #{site.name}
       .page-cta
-        a(class="download", href="#") Download
-        a(class="github", href="#") See on github
+        - if(site.github)
+          a(class="github", href=site.github) See on github
+        - if(site.url)
+          a(class="url", href=site.url) Site
+        - if(site.download)
+          a(class="download", href=site.download) Download
     nav.page-nav
       div.main-menu
         ul

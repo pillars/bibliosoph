@@ -1,19 +1,24 @@
 var express       = require('express')
   , stylus        = require('stylus')
   , nib           = require('nib')
+  , jade          = require('jade')
   , marked        = require('marked')
   , fs            = require('fs')
-  , folderToHTML  = require('./lib/folderToHtml');
+  , config        = require('./config')
+  , app           = express();
 
-var app = express();
 
+// Stylus compiler using nib
+// -------------------------
 function compile(str, path) {
   return stylus(str)
     .set('filename', path)
     .use(nib())
 }
 
+
 // Marked configuration
+// --------------------
 marked.setOptions({
   gfm: true,
   tables: true,
@@ -30,25 +35,25 @@ marked.setOptions({
   }
 });
 
-app.set('views', __dirname + '/views')
-app.set('view engine', 'jade')
-app.use(express.logger('dev'))
-app.use(stylus.middleware(
-  { src: __dirname + '/public'
-  , compile: compile
-  }
-))
-app.use(express.static(__dirname + '/public'))
 
-app.get('/', function (req, res) {
-
-  folderToHTML.render(__dirname+'/views/home/');
-
-  res.render('two_col_nav', {
-      title: req.params.component
-    , menu: folderToHTML.getMenuHTML()
-    , html: folderToHTML.getSectionsHTML()
-  })
+// App configuration
+// -----------------
+app.set( 'views', __dirname + '/views' )
+app.set( 'view engine', 'jade' )
+app.use( express.logger('dev') )
+app.use( stylus.middleware({ src: __dirname + '/public', compile: compile }) )
+app.use( express.static(__dirname + '/public') )
+app.use(function(req, res, next) {
+   res.locals.site = config.site;
+   next();
 });
 
+
+// App routes
+// ----------
+require('./routes').init(app)
+
+
+// Start server
+// ------------
 app.listen(3000)

@@ -118,7 +118,7 @@ pre {
   padding-bottom: 12px;
 }
 code {
-  font-family: 'DroidSansMonoW01-Regula';
+  font-family: 'Inconsolata', 'Lucida Console', Monaco, monospace;
 }
 form {
   margin: 0;
@@ -308,7 +308,7 @@ select:focus {
   font-weight: bold;
 }
 .document-nav .current:hover {
-  color: #636466;
+  color: #222;
   text-decoration: none;
 }
 .document-nav .active ul {

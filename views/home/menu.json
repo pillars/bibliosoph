@@ -3,9 +3,9 @@
         "title": "Introduction",
         "children": [
             "intro",
-            "changelog",
             "getstarted",
             "brand",
+            "changelog",
             "credits"
         ]
     }
