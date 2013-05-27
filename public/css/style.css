@@ -1,3 +1,4 @@
+@import url("http://fonts.googleapis.com/css?family=Dosis:400,700|Inconsolata:400,700");
 html,
 body {
   margin: 0;
@@ -10,15 +11,18 @@ html {
 body {
   background: #fff;
   color: #636466;
-  font-family: 'DIN Next W01 Regular', Helvetica, Arial, sans-serif;
+  font-family: 'Dosis', Helvetica, Arial, sans-serif;
   min-height: 100%;
+}
+:focus {
+  outline: 0;
 }
 h1,
 h2,
 h3,
 h4 {
-  color: #232323;
-  font-family: 'VDS', Helvetica, Arial, sans-serif;
+  color: #222;
+  font-family: 'Dosis', Helvetica, Arial, sans-serif;
   letter-spacing: 2px;
   text-rendering: optimizeLegibility;
   margin: 0;
@@ -26,28 +30,26 @@ h4 {
 h1 {
   font-family: 24px;
   font-weight: normal;
-  line-height: 32px;
+  line-height: 48px;
 }
 h2 {
   font-size: 20px;
+  font-weight: bold;
   line-height: 24px;
-  margin-top: 48px;
 }
 h3 {
-  font-size: 20px;
-  font-weight: normal;
-  line-height: 28px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
 }
 h4 {
-  font-size: 16px;
-  font-weight: normal;
+  font-size: 14px;
   line-height: 24px;
-  margin: 24px 0 0;
 }
 p {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 24px;
-  include: trailer(1, 13px);
+  include: trailer(1, 14px);
 }
 strong {
   font-weight: bold;
@@ -56,29 +58,20 @@ em {
   font-style: italic;
 }
 a {
-  color: #232323;
+  color: #1e95cd;
   cursor: pointer;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #222;
   text-decoration: underline;
-}
-a:hover {
-  color: #808080;
-}
-a.more:after {
-  content: '→';
-  margin-left: 4px;
-}
-mixin linkify {
-  color: #232323;
-  cursor: pointer;
-}
-mixin linkify:hover {
-  color: #808080;
 }
 ol,
 ul {
-  include: adjust-font-size-to(13px);
-  include: leader(1, 13px);
-  include: trailer(1, 13px);
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0;
 }
 ul {
   list-style: disc;
@@ -89,7 +82,7 @@ dl {
 }
 dl dt,
 dl dd {
-  include: adjust-font-size-to(13px);
+  include: adjust-font-size-to(14px);
   margin: 0;
   padding: 0;
 }
@@ -105,7 +98,7 @@ blockquote {
   padding-top: 24px;
 }
 blockquote:before {
-  font-family: 'DIN Next W01 Regular', Helvetica, Arial, sans-serif;
+  font-family: 'Dosis', Helvetica, Arial, sans-serif;
   color: #ccc;
   font-size: 50px;
   content: '“';
@@ -115,7 +108,7 @@ blockquote:before {
 }
 blockquote cite {
   color: #666;
-  font-family: 'DIN Next W01 Regular', Helvetica, Arial, sans-serif;
+  font-family: 'Dosis', Helvetica, Arial, sans-serif;
   font-style: italic;
   text-align: right;
   display: block;
@@ -166,9 +159,9 @@ input[type="number"],
 input[type="password"],
 textarea {
   border: 1px solid #000;
-  line-height: 15px;
+  line-height: 16px;
   display: block;
-  padding: 9px/2 12px;
+  padding: 8px/2 12px;
   height: 24px;
 }
 textarea {
@@ -198,6 +191,7 @@ select:focus {
   z-index: 300;
 }
 .page-head .logo {
+  color: #222;
   line-height: 48px;
   font-size: 24px;
   font-weight: bold;
@@ -211,9 +205,11 @@ select:focus {
   margin-right: 12px;
 }
 .page-head .page-cta a {
+  background: #1e95cd;
   border: 1px solid #dce4e7;
   -webkit-border-radius: 12px;
   border-radius: 12px;
+  color: #fff;
   font-size: 12px;
   line-height: 16px;
   text-decoration: none;
@@ -248,7 +244,6 @@ select:focus {
   height: 96px;
 }
 .page-nav .main-menu a {
-  background: url("images/sprite.png") no-repeat 0 0;
   border-top: 1px solid #444;
   border-bottom: 1px solid #1b1b1b;
   color: #888;
@@ -275,13 +270,54 @@ select:focus {
   bottom: 0;
 }
 .document-nav {
-  float: left;
-  padding: 24px;
-  width: 200px;
+  background: #fff;
+  position: fixed;
+  top: 48px;
+  bottom: 0;
+  left: 96px;
+  padding: 24px 0 24px 24px;
+  width: 224px;
+}
+.document-nav .title {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.document-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.document-nav ul ul {
+  display: none;
+  margin: 0 0 6px 12px;
+}
+.document-nav ul ul li {
+  font-size: 12px;
+  line-height: 20px;
+}
+.document-nav a {
+  display: block;
+  padding-right: 24px;
+}
+.document-nav .current {
+  border-right: 3px solid #1e95cd;
+  color: #222;
+  font-weight: bold;
+}
+.document-nav .current:hover {
+  color: #636466;
+  text-decoration: none;
+}
+.document-nav .active ul {
+  display: block;
 }
 .anchor {
   display: block;
   overflow: hidden;
+  margin-top: -48px;
   width: 0;
   height: 0;
 }
@@ -337,6 +373,9 @@ select:focus {
   margin: 0;
   width: 100%;
 }
+.two-col .document-wrap > section + section {
+  border-top: 1px solid #dce4e7;
+}
 .two-col .document-wrap .left,
 .two-col .document-wrap .right {
   -webkit-box-sizing: border-box;
@@ -352,6 +391,10 @@ select:focus {
 .two-col .document-wrap .right {
   clear: right;
   float: right;
+  padding-top: 72px;
+}
+.two-col .document-wrap .right h2 {
+  margin-top: -24px;
 }
 .two-col.with-nav .document-content {
   margin-left: 248px;

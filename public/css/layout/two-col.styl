@@ -1,14 +1,14 @@
 .two-col {
     .document-content {
-        border-left: 1px solid $blue-dark
+        border-left: 1px solid $blue-bg-dark
 
         min-width: 800px
         min-height: 100%
     }
 
     .document-wrap {
-        background: $blue
-        border-left: 1px solid $blue-dark
+        background: $blue-bg
+        border-left: 1px solid $blue-bg-dark
         box-shadow: #dadfe5 -1px 0 0,rgba(0,0,0,0.05) 1px 0 2px inset
         
         clearfix()
@@ -26,6 +26,10 @@
             }
         }
 
+        & > section + section {
+            border-top: 1px solid $blue-bg-dark
+        }
+
         .left, .right {
             box-sizing: border-box
             float: left
@@ -38,6 +42,11 @@
         .right {
             clear: right
             float: right
+            padding-top: h(3)
+
+            h2 {
+                margin-top: h(-1)
+            }
         }
     }
 

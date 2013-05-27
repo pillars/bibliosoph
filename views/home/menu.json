@@ -4,7 +4,9 @@
         "children": [
             "intro",
             "changelog",
-            "getstarted"
+            "getstarted",
+            "brand",
+            "credits"
         ]
     }
     
