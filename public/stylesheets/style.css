@@ -1,0 +1,358 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  background: #fff;
+  color: #636466;
+  font-family: 'DIN Next W01 Regular', Helvetica, Arial, sans-serif;
+  min-height: 100%;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: #232323;
+  font-family: 'VDS', Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+h1 {
+  font-family: 24px;
+  font-weight: normal;
+  line-height: 32px;
+}
+h2 {
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 48px;
+}
+h3 {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 28px;
+}
+h4 {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+  margin: 24px 0 0;
+}
+p {
+  font-size: 13px;
+  line-height: 24px;
+  include: trailer(1, 13px);
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+a {
+  color: #232323;
+  cursor: pointer;
+  text-decoration: underline;
+}
+a:hover {
+  color: #808080;
+}
+a.more:after {
+  content: '→';
+  margin-left: 4px;
+}
+mixin linkify {
+  color: #232323;
+  cursor: pointer;
+}
+mixin linkify:hover {
+  color: #808080;
+}
+ol,
+ul {
+  include: adjust-font-size-to(13px);
+  include: leader(1, 13px);
+  include: trailer(1, 13px);
+}
+ul {
+  list-style: disc;
+}
+dl {
+  margin: 0;
+  padding: 0;
+}
+dl dt,
+dl dd {
+  include: adjust-font-size-to(13px);
+  margin: 0;
+  padding: 0;
+}
+abbr {
+  font-variant: small-caps;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+blockquote {
+  position: relative;
+  margin: 24px 0 0 50px;
+  padding-top: 24px;
+}
+blockquote:before {
+  font-family: 'DIN Next W01 Regular', Helvetica, Arial, sans-serif;
+  color: #ccc;
+  font-size: 50px;
+  content: '“';
+  position: absolute;
+  top: 0px;
+  left: -30px;
+}
+blockquote cite {
+  color: #666;
+  font-family: 'DIN Next W01 Regular', Helvetica, Arial, sans-serif;
+  font-style: italic;
+  text-align: right;
+  display: block;
+}
+pre {
+  overflow: auto;
+  padding-bottom: 12px;
+}
+code {
+  font-family: 'DroidSansMonoW01-Regula';
+}
+form {
+  margin: 0;
+  padding: 0;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 0 35px;
+  padding: 24px 12px 12px;
+}
+label,
+.label {
+  display: block;
+}
+button,
+input,
+select,
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  *overflow: visible;
+}
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+textarea {
+  border: 1px solid #000;
+  line-height: 15px;
+  display: block;
+  padding: 9px/2 12px;
+  height: 24px;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  height: 78px;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+select {
+  cursor: pointer;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+.page-head {
+  background: #f2f7f9;
+  border-bottom: 1px solid #dce4e7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 300;
+}
+.page-head .logo {
+  line-height: 48px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  float: left;
+  margin-left: 12px;
+  height: 48px;
+}
+.page-head .page-cta {
+  float: right;
+  margin-right: 12px;
+}
+.page-head .page-cta a {
+  border: 1px solid #dce4e7;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: none;
+  float: right;
+  margin: 12px 0 12px 8px;
+  padding: 4px 12px;
+  height: 16px;
+}
+.page-nav {
+  background: #565656;
+  color: #fff;
+  position: fixed;
+  top: 48px;
+  bottom: 0;
+  left: 0;
+  z-index: 400;
+}
+.page-nav .main-menu {
+  border-top: 1px solid #444;
+  border-right: 1px solid #444;
+  height: 100%;
+}
+.page-nav .main-menu ul {
+  border-bottom: 1px solid #1b1b1b;
+  list-style: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 96px;
+}
+.page-nav .main-menu li {
+  height: 96px;
+}
+.page-nav .main-menu a {
+  background: url("images/sprite.png") no-repeat 0 0;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #1b1b1b;
+  color: #888;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  padding-top: 72px;
+}
+.page-nav .main-menu a:hover {
+  background: #333;
+  border-top: none;
+}
+.page-nav .sub-menu {
+  display: none;
+}
+.page-body {
+  position: absolute;
+  top: 48px;
+  left: 96px;
+  right: 0;
+  bottom: 0;
+}
+.document-nav {
+  float: left;
+  padding: 24px;
+  width: 200px;
+}
+.anchor {
+  display: block;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+@media only screen and (min-width : 1400px) {
+  .component-doc-wrap {
+    margin-left: 543px;
+  }
+  .component-doc-wrap section {
+    margin-left: -543px;
+  }
+  .component-doc-wrap .left,
+  .component-doc-wrap .right {
+    width: 543px;
+  }
+}
+.one-col .document-content {
+  padding: 48px;
+  min-width: 300px;
+  min-height: 100%;
+  max-width: 600px;
+}
+.one-col.with-nav .document-content {
+  margin-left: 248px;
+}
+.two-col .document-content {
+  border-left: 1px solid #dce4e7;
+  min-width: 800px;
+  min-height: 100%;
+}
+.two-col .document-wrap {
+  background: #f2f7f9;
+  border-left: 1px solid #dce4e7;
+  -webkit-box-shadow: #dadfe5 -1px 0 0, rgba(0,0,0,0.05) 1px 0 2px inset;
+  box-shadow: #dadfe5 -1px 0 0, rgba(0,0,0,0.05) 1px 0 2px inset;
+  zoom: 1;
+  margin-left: 50%;
+  min-height: 100%;
+}
+.two-col .document-wrap:before,
+.two-col .document-wrap:after {
+  content: "";
+  display: table;
+}
+.two-col .document-wrap:after {
+  clear: both;
+}
+.two-col .document-wrap section {
+  overflow: hidden;
+  margin-left: -100%;
+}
+.two-col .document-wrap section section {
+  float: left;
+  margin: 0;
+  width: 100%;
+}
+.two-col .document-wrap .left,
+.two-col .document-wrap .right {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 48px;
+  width: 50%;
+}
+.two-col .document-wrap .left {
+  clear: both;
+}
+.two-col .document-wrap .right {
+  clear: right;
+  float: right;
+}
+.two-col.with-nav .document-content {
+  margin-left: 248px;
+}

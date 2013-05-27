@@ -1,0 +1,84 @@
+form {
+  margin: 0; padding: 0;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 0 h(1.5) - 1px;
+  padding: h() 12px 12px;
+}
+
+legend {
+}
+
+label, .label {
+  // @include adjust-font-size-to($f-medium);
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  // @include adjust-font-size-to($f-medium);
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+}
+
+
+// BUTTONS
+// ---------------------------------------------
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button; // make clickable input stylable in iOS
+  *overflow: visible; // Fix inner spacing in IE7
+}
+
+
+// FORM ELEMENTS WITH CONTENT
+// ---------------------------------------------
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+textarea {
+  $padding = h() - $f-medium - 2px;
+
+  border: 1px solid black;
+  line-height: $f-medium + 2px;
+
+  display: block;
+  padding: $padding / 2 h(.5);
+  height: h();
+}
+
+textarea {
+  overflow: auto; // removes v-scroll in IE6-9
+  vertical-align: top; // improve readability
+
+  height: h(3.25);
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield; // Fix searchfield appearance in S5 and Ch
+}
+
+
+// RADIO - CHECKBOXES
+// ---------------------------------------------
+input[type="checkbox"],
+input[type="radio"] {
+}
+
+
+// SELECT
+// ---------------------------------------------
+select {
+  cursor: pointer;
+}

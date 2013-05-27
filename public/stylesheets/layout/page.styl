@@ -1,0 +1,142 @@
+$main-menu-width = h(4)
+$blue = #f2f7f9
+$blue-dark = #dce4e7
+
+.page-head {
+    background: $blue
+    border-bottom: 1px solid $blue-dark
+
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: h(2)
+    z-index: $z-header
+
+    .logo {
+        line-height: h(2)
+        font-size: 24px
+        font-weight: bold
+        text-decoration: none
+
+        float: left
+        margin-left: h(.5)
+        height: h(2)
+    }
+
+    .page-cta {
+        float: right 
+        margin-right: h(.5)
+
+        a {
+            border: 1px solid $blue-dark
+            border-radius: 12px
+            font-size: 12px
+            line-height: 16px
+            text-decoration: none
+
+            float: right
+            margin: h(.5) 0 h(.5) 8px
+            padding: 4px 12px
+            height: 16px
+        }
+    }
+}
+
+.page-nav {
+    $grey-bg     = #565656
+    $grey-hover  = #333
+    $grey-dark   = #1b1b1b
+    $grey-light  = #444
+
+    background: $grey-bg
+    color: #FFF
+
+    position: fixed
+    top: h(2)
+    bottom: 0
+    left: 0
+    z-index: $z-page-nav
+
+    
+
+    .main-menu {
+        border-top: 1px solid $grey-light
+        border-right: 1px solid $grey-light
+        height: 100%
+
+        ul {
+            border-bottom: 1px solid $grey-dark
+            list-style: none
+            overflow: hidden
+            margin: 0
+            padding: 0
+            width: $main-menu-width
+        }
+
+        li {
+            height: $main-menu-width
+        }
+
+        a {
+            background: url('images/sprite.png') no-repeat 0 0
+            border-top: 1px solid $grey-light
+            border-bottom: 1px solid $grey-dark
+            color: #888
+            font-size: 12px
+            font-weight: bold
+            line-height: h()
+            text-align: center
+            text-decoration: none
+            // text-transform: uppercase
+            
+            display: block
+            padding-top: h(3)
+
+            &:hover {
+                background: $grey-hover
+                border-top: none
+            }
+        }
+    }
+
+    .sub-menu {
+        display: none
+    }
+}
+
+.page-body {
+    position: absolute
+    top: h(2)
+    left: $main-menu-width
+    right: 0
+    bottom: 0
+}
+
+.document-nav {
+    float: left
+    padding: h()
+    width: 200px
+}
+
+.anchor {
+    display: block
+    overflow: hidden
+    width: 0
+    height: 0
+}
+
+
+@media only screen and (min-width : 1400px) {
+   .component-doc-wrap {
+        margin-left: 543px
+
+        section {
+            margin-left: -543px
+        }
+
+        .left, .right {
+            width: 543px
+        }
+   }
+}

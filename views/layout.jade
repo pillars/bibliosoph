@@ -1,0 +1,31 @@
+!!!5
+html
+  head
+    title #{title} - Bibliosoph
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="http://fast.fonts.com/jsapi/14a51b92-de02-4d03-ad18-b78a3fd0ccbe.js")
+  body
+    header.page-head
+      a(class="logo", href="/") Bibliosoph
+      .page-cta
+        a(class="download", href="#") Download
+        a(class="github", href="#") See on github
+    nav.page-nav
+      div.main-menu
+        ul
+          li
+            a(class="manifesto", href="/manifesto") Manifesto
+          li
+            a(class="components", href="/components") Components
+          li
+            a(class="develop", href="/develop") Develop
+          li
+            a(class="discuss", href="/discuss") Discuss
+      div.sub-menu
+        ul
+          li Image
+            ul
+              li
+                a(href="#") Responsive
+
+    block content
