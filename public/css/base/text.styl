@@ -39,9 +39,14 @@ h4 {
 // ---------------------------------------------
 p {
   font-size: $f-medium;
-  line-height: $base-line-height;
-  @include trailer(1, $f-medium);
+  line-height: $base-line-height
+  margin: 0
+
+  code {
+    line-height: $base-line-height
+  }
 }
+
 strong { 
   // font-family:'DIN Next W01 Bold';
   font-weight: bold;
@@ -67,7 +72,7 @@ a {
 
 // LISTS
 // ---------------------------------------------
-ol, ul {
+ol, ul, dl{
   font-size: $f-medium;
   line-height: $base-line-height;
   margin: 0
@@ -80,9 +85,12 @@ ul {
 dl {
   margin: 0; padding: 0;
 
-  dt, dd {
-    @include adjust-font-size-to($f-medium);
-    margin: 0; padding: 0;
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 0 0 h();
   }
 }
 
@@ -127,9 +135,31 @@ blockquote {
 // ---------------------------------------------
 pre {
   overflow: auto
+  margin: 0
   padding-bottom: h(.5)
 }
 
 code {
-  font-family: $f-mono;
+  font-family: $f-mono
+  font-size: $f-medium
+  line-height: $base-line-height
+}
+
+h1, h2, h3, h4, h5, h6, p, li, dt, dl {
+  code {
+    background: $blue-bg-dark
+    line-height: 20px
+    padding: 0 2px
+  }
+}
+
+
+// FLOW
+// ---------------------------------------------
+h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, pre {
+  &+h1, &+h2, &+h3, &+h4, &+h5, &+h6,
+  &+p, &+ul, &+ol, &+dl, 
+  &+blockquote, &+pre {
+    margin-top: h()
+  }
 }

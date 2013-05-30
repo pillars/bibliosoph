@@ -3,6 +3,27 @@
         "name"      : "Bibliosoph"
       , "github"    : "https://github.com/pillars/bibliosoph"
       , "download"  : "https://github.com/pillars/bibliosoph"
-      , "theme"     : ""
+      , "menu"      : [
+            {
+                "title"     : "Manifesto"
+              , "url"       : "/manifesto"
+              , "class"     : "manifesto"
+            }
+          , {
+                "title"     : "Components"
+              , "url"       : "/components"
+              , "class"     : "components"
+              , "children"  : [
+                    {
+
+                    }
+                ]
+            }
+          , {
+                "title"     : "Bla"
+              , "url"       : "/bla"
+              , "class"     : "bla"
+            }
+      ]
     }
 }

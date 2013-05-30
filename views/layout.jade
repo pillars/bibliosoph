@@ -3,33 +3,31 @@ html
   head
     title #{title} - #{site.name}
     link(rel='stylesheet', href='/css/style.css')
-  body
+  body(class=site.layout || '')
     header.page-head
       a(class="logo", href="/") #{site.name}
       .page-cta
         - if(site.github)
           a(class="github", href=site.github) See on github
-        - if(site.url)
-          a(class="url", href=site.url) Site
+        - if(site.code)
+          a(class="code", href=site.code) Code
         - if(site.download)
           a(class="download", href=site.download) Download
-    nav.page-nav
-      div.main-menu
-        ul
-          li
-            a(class="manifesto", href="/manifesto") Manifesto
-          li
-            a(class="components", href="/components") Components
-          li
-            a(class="develop", href="/develop") Develop
-          li
-            a(class="discuss", href="/discuss") Discuss
-      div.sub-menu
-        ul
-          li Image
-            ul
+    
+    - if(site.menu)
+      nav.page-nav
+        div.main-menu
+          ul
+            - for item in site.menu
               li
-                a(href="#") Responsive
+                a(class=item.class, href=item.url) #{item.title}
+                - if(item.children)
+                  div.sub-menu
+                    ul
+                      - for child in item.children
+                        li
+                          a(class=child.class, href=child.url) #{child.title}
+                
 
     block content
 

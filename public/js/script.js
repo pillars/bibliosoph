@@ -40,6 +40,8 @@ $(function() {
         $window.on('scroll', function() {
             var scrollTop = $window.scrollTop();
 
+            $('.page-nav, .document-nav').toggleClass('fixed', scrollTop > 49);
+
             $.each( targets, function($index, $el) {
                 var sectionBottom = (targets[$index+1] && targets[$index+1].offset().top - 1) || $window.height()
                 if ($el.length && scrollTop - sectionBottom < -48) {

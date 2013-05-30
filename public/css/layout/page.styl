@@ -3,9 +3,9 @@ $main-menu-width = h(4)
 
 .page-head {
     background: $blue-bg
-    border-bottom: 1px solid $blue-bg-dark
+    border-bottom: 1px solid $nav-border
 
-    position: fixed
+    position: absolute
     top: 0
     left: 0
     right: 0
@@ -26,49 +26,50 @@ $main-menu-width = h(4)
 
     .page-cta {
         float: right 
-        margin-right: h(.5)
+        margin: h(.5) h(.5) 0 0
 
         a {
-            background: $blue
             border: 1px solid $blue-bg-dark
+            color: $blue
             border-radius: 12px
-            color: #FFF
             font-size: 12px
             line-height: 16px
             text-decoration: none
 
-            float: right
-            margin: h(.5) 0 h(.5) 8px
+            margin: 0 0 h(.5) 8px
             padding: 4px 12px
             height: 16px
+
+            &:hover {
+                background: $blue
+                border: 1px solid transparent
+                color: #FFF
+            }
         }
     }
 }
 
 .page-nav {
-    $grey-bg     = #565656
-    $grey-hover  = #333
-    $grey-dark   = #1b1b1b
-    $grey-light  = #444
+    background: $nav-bg
 
-    background: $grey-bg
-    color: #FFF
-
-    position: fixed
-    top: $header-height
-    bottom: 0
+    position: absolute
+    top: 0
     left: 0
+    padding-top: $header-height
+    height: 100%
     z-index: $z-page-nav
 
-    
+    &.fixed {
+        position: fixed
+        top: -1 * $header-height
+    }
 
     .main-menu {
-        border-top: 1px solid $grey-light
-        border-right: 1px solid $grey-light
+        border-top: 1px solid $nav-light
+        border-right: 1px solid $nav-border
         height: 100%
 
         ul {
-            border-bottom: 1px solid $grey-dark
             list-style: none
             overflow: hidden
             margin: 0
@@ -77,14 +78,57 @@ $main-menu-width = h(4)
         }
 
         li {
+            border-top: 1px solid $nav-border
+            border-bottom: 1px solid $nav-light
+
+            position: relative
+            margin-top: -2px
+            padding-bottom: 2px
             height: $main-menu-width
+            z-index: 5
+
+            &:first-child {
+                border-top: 0
+                margin-top: 0
+                padding-bottom: 1px
+
+                a {
+                    border-top: 0
+                }
+
+                &:hover {
+                    border-top: 0
+
+                    a {
+                        border-top: 0
+                    }
+                }
+            }
+
+            &:last-child {
+                border-bottom: 0
+            }
+
+            &:hover {
+                border-top: 1px solid $nav-border
+                border-bottom: 1px solid $nav-border
+                z-index: 10
+
+                a {
+                    background: $nav-hover
+                    border-color: transparent
+                    // color: $blue-bg-dark
+                }
+            }
         }
+
 
         a {
             // background: url('images/sprite.png') no-repeat 0 0
-            border-top: 1px solid $grey-light
-            border-bottom: 1px solid $grey-dark
-            color: #888
+            background: $nav-bg
+            border-top: 1px solid $nav-light
+            border-bottom: 1px solid $nav-border
+            color: $text
             font-size: 12px
             font-weight: bold
             line-height: h()
@@ -94,11 +138,7 @@ $main-menu-width = h(4)
             
             display: block
             padding-top: h(3)
-
-            &:hover {
-                background: $grey-hover
-                border-top: none
-            }
+            height: h()         
         }
     }
 
@@ -117,12 +157,19 @@ $main-menu-width = h(4)
 
 .document-nav {
     background: #FFF;
-    position: fixed
-    top: $header-height
+    border-right: 1px solid $blue-bg-dark
+
+    position: absolute
+    top: 0
     bottom: 0
-    left: $main-menu-width
+    left: 0
     padding: h() 0 h() h()
     width: 224px
+
+    &.fixed {
+        position: fixed
+        left: $main-menu-width
+    }
 
     .title {
         font-size: 14px
@@ -174,9 +221,12 @@ $main-menu-width = h(4)
 .anchor {
     display: block
     overflow: hidden
-    margin-top: h(-2)
     width: 0
     height: 0
+}
+
+section .anchor:first-child {
+    margin-top: h(-2)
 }
 
 

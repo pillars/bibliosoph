@@ -49,7 +49,10 @@ h4 {
 p {
   font-size: 14px;
   line-height: 24px;
-  include: trailer(1, 14px);
+  margin: 0;
+}
+p code {
+  line-height: 24px;
 }
 strong {
   font-weight: bold;
@@ -68,7 +71,8 @@ a:focus {
   text-decoration: underline;
 }
 ol,
-ul {
+ul,
+dl {
   font-size: 14px;
   line-height: 24px;
   margin: 0;
@@ -80,11 +84,11 @@ dl {
   margin: 0;
   padding: 0;
 }
-dl dt,
+dl dt {
+  font-weight: bold;
+}
 dl dd {
-  include: adjust-font-size-to(14px);
-  margin: 0;
-  padding: 0;
+  margin: 0 0 24px;
 }
 abbr {
   font-variant: small-caps;
@@ -115,10 +119,173 @@ blockquote cite {
 }
 pre {
   overflow: auto;
+  margin: 0;
   padding-bottom: 12px;
 }
 code {
   font-family: 'Inconsolata', 'Lucida Console', Monaco, monospace;
+  font-size: 14px;
+  line-height: 24px;
+}
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+dt code,
+dl code {
+  background: #dce4e7;
+  line-height: 20px;
+  padding: 0 2px;
+}
+h1+h1,
+h2+h1,
+h3+h1,
+h4+h1,
+h5+h1,
+h6+h1,
+p+h1,
+ul+h1,
+ol+h1,
+dl+h1,
+blockquote+h1,
+pre+h1,
+h1+h2,
+h2+h2,
+h3+h2,
+h4+h2,
+h5+h2,
+h6+h2,
+p+h2,
+ul+h2,
+ol+h2,
+dl+h2,
+blockquote+h2,
+pre+h2,
+h1+h3,
+h2+h3,
+h3+h3,
+h4+h3,
+h5+h3,
+h6+h3,
+p+h3,
+ul+h3,
+ol+h3,
+dl+h3,
+blockquote+h3,
+pre+h3,
+h1+h4,
+h2+h4,
+h3+h4,
+h4+h4,
+h5+h4,
+h6+h4,
+p+h4,
+ul+h4,
+ol+h4,
+dl+h4,
+blockquote+h4,
+pre+h4,
+h1+h5,
+h2+h5,
+h3+h5,
+h4+h5,
+h5+h5,
+h6+h5,
+p+h5,
+ul+h5,
+ol+h5,
+dl+h5,
+blockquote+h5,
+pre+h5,
+h1+h6,
+h2+h6,
+h3+h6,
+h4+h6,
+h5+h6,
+h6+h6,
+p+h6,
+ul+h6,
+ol+h6,
+dl+h6,
+blockquote+h6,
+pre+h6,
+h1+p,
+h2+p,
+h3+p,
+h4+p,
+h5+p,
+h6+p,
+p+p,
+ul+p,
+ol+p,
+dl+p,
+blockquote+p,
+pre+p,
+h1+ul,
+h2+ul,
+h3+ul,
+h4+ul,
+h5+ul,
+h6+ul,
+p+ul,
+ul+ul,
+ol+ul,
+dl+ul,
+blockquote+ul,
+pre+ul,
+h1+ol,
+h2+ol,
+h3+ol,
+h4+ol,
+h5+ol,
+h6+ol,
+p+ol,
+ul+ol,
+ol+ol,
+dl+ol,
+blockquote+ol,
+pre+ol,
+h1+dl,
+h2+dl,
+h3+dl,
+h4+dl,
+h5+dl,
+h6+dl,
+p+dl,
+ul+dl,
+ol+dl,
+dl+dl,
+blockquote+dl,
+pre+dl,
+h1+blockquote,
+h2+blockquote,
+h3+blockquote,
+h4+blockquote,
+h5+blockquote,
+h6+blockquote,
+p+blockquote,
+ul+blockquote,
+ol+blockquote,
+dl+blockquote,
+blockquote+blockquote,
+pre+blockquote,
+h1+pre,
+h2+pre,
+h3+pre,
+h4+pre,
+h5+pre,
+h6+pre,
+p+pre,
+ul+pre,
+ol+pre,
+dl+pre,
+blockquote+pre,
+pre+pre {
+  margin-top: 24px;
 }
 form {
   margin: 0;
@@ -182,8 +349,8 @@ select:focus {
 }
 .page-head {
   background: #f2f7f9;
-  border-bottom: 1px solid #dce4e7;
-  position: fixed;
+  border-bottom: 1px solid #acbec4;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -202,38 +369,44 @@ select:focus {
 }
 .page-head .page-cta {
   float: right;
-  margin-right: 12px;
+  margin: 12px 12px 0 0;
 }
 .page-head .page-cta a {
-  background: #1e95cd;
   border: 1px solid #dce4e7;
+  color: #1e95cd;
   -webkit-border-radius: 12px;
   border-radius: 12px;
-  color: #fff;
   font-size: 12px;
   line-height: 16px;
   text-decoration: none;
-  float: right;
-  margin: 12px 0 12px 8px;
+  margin: 0 0 12px 8px;
   padding: 4px 12px;
   height: 16px;
 }
-.page-nav {
-  background: #565656;
+.page-head .page-cta a:hover {
+  background: #1e95cd;
+  border: 1px solid transparent;
   color: #fff;
-  position: fixed;
-  top: 48px;
-  bottom: 0;
+}
+.page-nav {
+  background: #dce4e7;
+  position: absolute;
+  top: 0;
   left: 0;
-  z-index: 400;
+  padding-top: 48px;
+  height: 100%;
+  z-index: 200;
+}
+.page-nav.fixed {
+  position: fixed;
+  top: -48px;
 }
 .page-nav .main-menu {
-  border-top: 1px solid #444;
-  border-right: 1px solid #444;
+  border-top: 1px solid #f2f7f9;
+  border-right: 1px solid #acbec4;
   height: 100%;
 }
 .page-nav .main-menu ul {
-  border-bottom: 1px solid #1b1b1b;
   list-style: none;
   overflow: hidden;
   margin: 0;
@@ -241,12 +414,45 @@ select:focus {
   width: 96px;
 }
 .page-nav .main-menu li {
+  border-top: 1px solid #acbec4;
+  border-bottom: 1px solid #f2f7f9;
+  position: relative;
+  margin-top: -2px;
+  padding-bottom: 2px;
   height: 96px;
+  z-index: 5;
+}
+.page-nav .main-menu li:first-child {
+  border-top: 0;
+  margin-top: 0;
+  padding-bottom: 1px;
+}
+.page-nav .main-menu li:first-child a {
+  border-top: 0;
+}
+.page-nav .main-menu li:first-child:hover {
+  border-top: 0;
+}
+.page-nav .main-menu li:first-child:hover a {
+  border-top: 0;
+}
+.page-nav .main-menu li:last-child {
+  border-bottom: 0;
+}
+.page-nav .main-menu li:hover {
+  border-top: 1px solid #acbec4;
+  border-bottom: 1px solid #acbec4;
+  z-index: 10;
+}
+.page-nav .main-menu li:hover a {
+  background: #d1dce0;
+  border-color: transparent;
 }
 .page-nav .main-menu a {
-  border-top: 1px solid #444;
-  border-bottom: 1px solid #1b1b1b;
-  color: #888;
+  background: #dce4e7;
+  border-top: 1px solid #f2f7f9;
+  border-bottom: 1px solid #acbec4;
+  color: #636466;
   font-size: 12px;
   font-weight: bold;
   line-height: 24px;
@@ -254,10 +460,7 @@ select:focus {
   text-decoration: none;
   display: block;
   padding-top: 72px;
-}
-.page-nav .main-menu a:hover {
-  background: #333;
-  border-top: none;
+  height: 24px;
 }
 .page-nav .sub-menu {
   display: none;
@@ -271,12 +474,17 @@ select:focus {
 }
 .document-nav {
   background: #fff;
-  position: fixed;
-  top: 48px;
+  border-right: 1px solid #dce4e7;
+  position: absolute;
+  top: 0;
   bottom: 0;
-  left: 96px;
+  left: 0;
   padding: 24px 0 24px 24px;
   width: 224px;
+}
+.document-nav.fixed {
+  position: fixed;
+  left: 96px;
 }
 .document-nav .title {
   font-size: 14px;
@@ -317,9 +525,11 @@ select:focus {
 .anchor {
   display: block;
   overflow: hidden;
-  margin-top: -48px;
   width: 0;
   height: 0;
+}
+section .anchor:first-child {
+  margin-top: -48px;
 }
 @media only screen and (min-width : 1400px) {
   .component-doc-wrap {
@@ -343,7 +553,6 @@ select:focus {
   margin-left: 248px;
 }
 .two-col .document-content {
-  border-left: 1px solid #dce4e7;
   min-width: 800px;
   min-height: 100%;
 }
@@ -391,10 +600,20 @@ select:focus {
 .two-col .document-wrap .right {
   clear: right;
   float: right;
-  padding-top: 72px;
+  padding-top: 96px;
 }
-.two-col .document-wrap .right h2 {
-  margin-top: -24px;
+.two-col .document-wrap .right > h2:first-child {
+  margin-top: -48px;
+}
+.two-col .document-wrap .right h3 {
+  color: #acbec4;
+  font-family: 'Inconsolata', 'Lucida Console', Monaco, monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.two-col .document-wrap .right h3+pre {
+  margin: 0;
 }
 .two-col.with-nav .document-content {
   margin-left: 248px;
