@@ -1,0 +1,43 @@
+- title('Edit the site info')
+
+div.left
+    :markdown
+        ### Edit the site info
+
+        Just open the `config.json` file and start editing it to your needs.
+
+    dl
+      dt name
+      dd Used for the logo and page <code>#{'<title>'}</code> tag
+    
+      dt layout (optional)
+      dd By default, Bibliosoph comes as a one pager documentation. If you need a menu, set layout to <code>leftNav</code>
+
+      dt code (optional)
+      dd Creates a button "See the code" in the header pointing to the url provided
+
+      dt github (optional)
+      dd Same as code but with the text "See on github"
+
+      dt bitbucket (optional)
+      dd Same as code but with the text "See on bitbucket"
+
+      dt download (optional)
+      dd Creates a button "Download" in the header pointing to your download
+
+
+div.right
+    :markdown
+        ### Exemple of a config.json
+        ```json
+        {
+            "site": {
+                name      : "Bibliosoph"
+              , code      : "http://yourprojectcodeurl.com"
+              , github    : "http://yourprojectgithuburl.com"
+              , bitbucket : "http://yourprojectbitbucketurl.com"
+              , download  : "http://yourprojectdownloadurl.com"
+              , layout    : "leftNav"
+            }
+        }
+        ```
