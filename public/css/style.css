@@ -577,6 +577,9 @@ select:focus {
   text-transform: uppercase;
   margin: 0;
 }
+.document-nav ul+.title {
+  margin-top: 24px;
+}
 .document-nav ul {
   list-style: none;
   margin: 0;
