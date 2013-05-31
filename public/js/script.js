@@ -9,7 +9,6 @@ $(function() {
 
         $documentNav.find('a').each(function() {
             targets.push( $($(this).attr('href')) )
-            console.log($(this).get(0))
         });
 
         function setActive($current) {
@@ -41,6 +40,7 @@ $(function() {
             var scrollTop = $window.scrollTop();
 
             $('.page-nav, .document-nav').toggleClass('fixed', scrollTop > 49);
+            $('.page-head').css('marginTop', Math.min(0, -1*scrollTop));
 
             $.each( targets, function($index, $el) {
                 var sectionBottom = (targets[$index+1] && targets[$index+1].offset().top - 1) || $window.height()
@@ -49,8 +49,53 @@ $(function() {
                     return false;
                 }
             });
-        }).trigger('scroll');
+        });
+
+        // Animate the menu
+        // ================
+        $('.page-nav .parent a').each(function() {
+            var menu = new submenu();
+            menu.init( $(this) )
+        });
     }
 
 
+    // Scroll, show/hide header
+    // ========================
+    $window.on('scroll', function() {
+        $('.page-head').css('marginTop', Math.min(0, -1*$window.scrollTop()));
+    }).trigger('scroll');
 });
+
+
+
+var submenu = function() {
+    var opening
+      , closing
+      , $el
+      , $submenu;
+
+    this.init = function(el) {
+        $el = el;
+        $submenu = $('.page-nav .sub-menu.'+$el.attr('class'));
+
+        $el.add($submenu)
+           .on('mouseenter', this.open)
+           .on('mouseleave', this.close);
+    }
+
+    this.open = function() {
+        clearTimeout(closing);
+
+        opening = setTimeout(function() {
+            $submenu.addClass('open')
+        }, 300);
+    }
+
+    this.close = function() {
+        clearTimeout(opening);
+        closing = setTimeout(function() {
+            $submenu.removeClass('open')
+        }, 300);
+    }
+}

@@ -3,7 +3,7 @@ html
   head
     title #{title} - #{site.name}
     link(rel='stylesheet', href='/css/style.css')
-  body(class=site.layout || '')
+  body(class=site.menu && 'leftNav' || '')
     header.page-head
       a(class="logo", href="/") #{site.name}
       .page-cta
@@ -19,14 +19,14 @@ html
         div.main-menu
           ul
             - for item in site.menu
-              li
+              li(class=item.children && 'parent' || '')
                 a(class=item.class, href=item.url) #{item.title}
-                - if(item.children)
-                  div.sub-menu
-                    ul
-                      - for child in item.children
-                        li
-                          a(class=child.class, href=child.url) #{child.title}
+        - for item in site.menu
+          - if(item.children)
+            ul(class="sub-menu "+item.class)
+              - for child in item.children
+                li
+                  a(class=child.class, href=child.url) #{child.title}
                 
 
     block content

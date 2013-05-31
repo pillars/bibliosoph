@@ -5,9 +5,9 @@
       , "download"  : "https://github.com/pillars/bibliosoph"
       , "menu"      : [
             {
-                "title"     : "Manifesto"
-              , "url"       : "/manifesto"
-              , "class"     : "manifesto"
+                "title"     : "Tutorials"
+              , "url"       : "/tutorials"
+              , "class"     : "tutorials"
             }
           , {
                 "title"     : "Components"

@@ -350,7 +350,7 @@ select:focus {
 .page-head {
   background: #f2f7f9;
   border-bottom: 1px solid #acbec4;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -389,7 +389,6 @@ select:focus {
   color: #fff;
 }
 .page-nav {
-  background: #dce4e7;
   position: absolute;
   top: 0;
   left: 0;
@@ -402,16 +401,29 @@ select:focus {
   top: -48px;
 }
 .page-nav .main-menu {
+  background: #dce4e7;
   border-top: 1px solid #f2f7f9;
   border-right: 1px solid #acbec4;
+  -webkit-box-shadow: 1px 0 2px 0 #acbec4;
+  box-shadow: 1px 0 2px 0 #acbec4;
+  position: relative;
   height: 100%;
+  z-index: 5;
 }
 .page-nav .main-menu ul {
   list-style: none;
-  overflow: hidden;
+  zoom: 1;
   margin: 0;
   padding: 0;
   width: 96px;
+}
+.page-nav .main-menu ul:before,
+.page-nav .main-menu ul:after {
+  content: "";
+  display: table;
+}
+.page-nav .main-menu ul:after {
+  clear: both;
 }
 .page-nav .main-menu li {
   border-top: 1px solid #acbec4;
@@ -439,10 +451,42 @@ select:focus {
 .page-nav .main-menu li:last-child {
   border-bottom: 0;
 }
+.page-nav .main-menu li:after,
+.page-nav .main-menu li:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transition: 0.1s all linear;
+  -moz-transition: 0.1s all linear;
+  -o-transition: 0.1s all linear;
+  -ms-transition: 0.1s all linear;
+  transition: 0.1s all linear;
+}
+.page-nav .main-menu li:after {
+  border-left: 8px solid #d1dce0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-top: -8px;
+  z-index: 1;
+}
+.page-nav .main-menu li:before {
+  border-left: 10px solid #acbec4;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-top: -10px;
+  z-index: 0;
+}
 .page-nav .main-menu li:hover {
   border-top: 1px solid #acbec4;
   border-bottom: 1px solid #acbec4;
   z-index: 10;
+}
+.page-nav .main-menu li:hover:after {
+  right: -8px;
+}
+.page-nav .main-menu li:hover:before {
+  right: -10px;
 }
 .page-nav .main-menu li:hover a {
   background: #d1dce0;
@@ -459,16 +503,56 @@ select:focus {
   text-align: center;
   text-decoration: none;
   display: block;
+  position: relative;
   padding-top: 72px;
   height: 24px;
+  z-index: 2;
+  -webkit-transition: 0.4s background linear;
+  -moz-transition: 0.4s background linear;
+  -o-transition: 0.4s background linear;
+  -ms-transition: 0.4s background linear;
+  transition: 0.4s background linear;
 }
 .page-nav .sub-menu {
-  display: none;
+  background: #d1dce0;
+  border-right: 1px solid #acbec4;
+  list-style: none;
+  -webkit-transition: 0.3s all cubic-bezier(0.86, 0, 0.07, 1);
+  -moz-transition: 0.3s all cubic-bezier(0.86, 0, 0.07, 1);
+  -o-transition: 0.3s all cubic-bezier(0.86, 0, 0.07, 1);
+  -ms-transition: 0.3s all cubic-bezier(0.86, 0, 0.07, 1);
+  transition: 0.3s all cubic-bezier(0.86, 0, 0.07, 1);
+  position: absolute;
+  top: 48px;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 248px;
+  z-index: 0;
+}
+.page-nav .sub-menu.open {
+  right: -248px;
+}
+.page-nav .sub-menu li:last-child {
+  border-bottom: 1px solid #dce4e7;
+}
+.page-nav .sub-menu a {
+  border-top: 1px solid #dce4e7;
+  line-height: 47px;
+  display: block;
+  padding: 0 24px;
+  height: 47px;
+}
+.page-nav .sub-menu a:hover {
+  background: #c7d3d8;
+  border-top: 1px solid #acbec4;
+  text-decoration: none;
 }
 .page-body {
   position: absolute;
   top: 48px;
-  left: 96px;
+  left: 0;
   right: 0;
   bottom: 0;
 }
@@ -484,7 +568,7 @@ select:focus {
 }
 .document-nav.fixed {
   position: fixed;
-  left: 96px;
+  left: 0;
 }
 .document-nav .title {
   font-size: 14px;
@@ -531,17 +615,11 @@ select:focus {
 section .anchor:first-child {
   margin-top: -48px;
 }
-@media only screen and (min-width : 1400px) {
-  .component-doc-wrap {
-    margin-left: 543px;
-  }
-  .component-doc-wrap section {
-    margin-left: -543px;
-  }
-  .component-doc-wrap .left,
-  .component-doc-wrap .right {
-    width: 543px;
-  }
+body.leftNav .page-body {
+  left: 96px;
+}
+body.leftNav .document-nav.fixed {
+  left: 96px;
 }
 .one-col .document-content {
   padding: 48px;

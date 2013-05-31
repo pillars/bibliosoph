@@ -5,7 +5,7 @@ $main-menu-width = h(4)
     background: $blue-bg
     border-bottom: 1px solid $nav-border
 
-    position: absolute
+    position: fixed
     top: 0
     left: 0
     right: 0
@@ -50,8 +50,6 @@ $main-menu-width = h(4)
 }
 
 .page-nav {
-    background: $nav-bg
-
     position: absolute
     top: 0
     left: 0
@@ -65,13 +63,17 @@ $main-menu-width = h(4)
     }
 
     .main-menu {
+        background: $nav-bg
         border-top: 1px solid $nav-light
         border-right: 1px solid $nav-border
+        box-shadow: 1px 0 2px 0 $nav-border
+        position: relative
         height: 100%
+        z-index: 5
 
         ul {
             list-style: none
-            overflow: hidden
+            clearfix()
             margin: 0
             padding: 0
             width: $main-menu-width
@@ -109,15 +111,51 @@ $main-menu-width = h(4)
                 border-bottom: 0
             }
 
+            $arrow-size = 8px
+            $arrow-border = $arrow-size + 2px
+
+            &:after, &:before {
+                content: ""
+                position: absolute
+                top: 50%
+                right: 0
+                transition: 0.1s all linear;
+            }
+
+            &:after {
+                border-left: $arrow-size solid $nav-hover
+                border-top: $arrow-size solid transparent
+                border-bottom: $arrow-size solid transparent
+
+                margin-top: -1 * $arrow-size
+                z-index: 1
+            }
+
+            &:before {
+                border-left: $arrow-border solid $nav-border
+                border-top: $arrow-border solid transparent
+                border-bottom: $arrow-border solid transparent
+
+                margin-top: -1 * $arrow-border
+                z-index: 0
+            }
+
             &:hover {
                 border-top: 1px solid $nav-border
                 border-bottom: 1px solid $nav-border
                 z-index: 10
 
+                &:after {
+                    right: -1 * $arrow-size
+                }
+
+                &:before {
+                    right: -1 * $arrow-border;
+                }
+
                 a {
                     background: $nav-hover
                     border-color: transparent
-                    // color: $blue-bg-dark
                 }
             }
         }
@@ -137,20 +175,59 @@ $main-menu-width = h(4)
             // text-transform: uppercase
             
             display: block
+            position: relative
             padding-top: h(3)
-            height: h()         
+            height: h()
+            z-index: 2
+
+            transition: 0.4s background linear;
         }
     }
 
     .sub-menu {
-        display: none
+        background: $nav-hover
+        border-right: 1px solid $nav-border
+        list-style: none
+        transition: 0.3s all cubic-bezier(0.86, 0, 0.07, 1)
+
+        // display: none
+        position: absolute
+        top: $header-height
+        bottom: 0
+        right: 0
+        margin: 0
+        padding: 0
+        width: 248px
+        z-index: 0
+
+        &.open {
+            right: -248px
+        }
+
+        li:last-child {
+            border-bottom: 1px solid $nav-bg
+        }
+
+        a {
+            border-top: 1px solid $nav-bg
+            line-height: h(2) - 1px
+            display: block
+            padding: 0 h()
+            height: h(2) - 1px
+
+            &:hover {
+                background: $subnav-hover
+                border-top: 1px solid $nav-border
+                text-decoration: none
+            }
+        }
     }
 }
 
 .page-body {
     position: absolute
     top: $header-height
-    left: $main-menu-width
+    left: 0
     right: 0
     bottom: 0
 }
@@ -168,7 +245,7 @@ $main-menu-width = h(4)
 
     &.fixed {
         position: fixed
-        left: $main-menu-width
+        left: 0
     }
 
     .title {
@@ -230,16 +307,18 @@ section .anchor:first-child {
 }
 
 
-@media only screen and (min-width : 1400px) {
-   .component-doc-wrap {
-        margin-left: 543px
+// LAYOUT WITH THE LEFT MENU
+// -------------------------
+body.leftNav {
+    .page-body {
+        left: $main-menu-width
+    }
 
-        section {
-            margin-left: -543px
-        }
+    .document-nav.fixed {
+        left: $main-menu-width
+    }
 
-        .left, .right {
-            width: 543px
-        }
-   }
 }
+
+// @media only screen and (min-width : 1400px) {
+// }
