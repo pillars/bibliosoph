@@ -1,0 +1,41 @@
+- title('Set the route')
+
+div.left
+    :markdown
+
+        #### Set the route
+
+        First you need to tell express that there is a new route. Open the `routes.js` file.
+
+        Set the route you want as the first argument of the `app.get()` function. For the homepage, we have `'/'`.
+
+        Set the view you want as the first argument of the `res.render()` function. By default, Bibliosoph comes with 4 views:
+
+        - **one_col:** All the content is displayed into one column 
+        - **one_col_nav:** same as `one_col`, plus an automatically generated navigation.
+        - **two_col:** The content is divided into two columns like the [Backbone annoted source](http://backbonejs.org/docs/backbone.html).
+        - **two_col_nav:** same as `two_col`, plus an automatically generated navigation.
+
+        folderToHTML is a library that let you pre-render an entire folder into an html partial that is then passed to the view. It has a simple API:
+
+        - **render**: Takes the directory path as an argument. It like a init function, it must be called first.
+        - **getMenuHTML**: returns the html for the navigation. It is useful only if you use a view that render the navigation.
+        - **getSectionsHTML**: returns the html for files.
+
+
+
+div.right
+    :markdown
+        ### Exemple of a config.json
+        ```js
+        app.get('/', function (req, res) {
+
+          folderToHTML.render(__dirname+'/views/home/');
+
+          res.render('two_col_nav', {
+              title: "Documentation template"
+            , menu: folderToHTML.getMenuHTML()
+            , html: folderToHTML.getSectionsHTML()
+          })
+        });
+        ```

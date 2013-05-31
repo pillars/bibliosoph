@@ -1,0 +1,22 @@
+- title('Add a page')
+
+div.left
+    :markdown
+        ### Add a page to the documentation
+
+        As a convention, each documentation page is contained into a folder inside the `views/`. For instance the homepage documentation of Bibliosoph sites in `views/home`. If you want to create a **tutorial** page, just add a folder.
+
+        In this folder, you have `*.jade` templates files and a `menu.json`. The fade files are the actual documentation and the json file is there to define in what order you want to include the templates.
+   
+div.right
+    :markdown
+        ### Documentation structure
+        ```
+        views/
+            home/
+            |   menu.json
+            |   intro.jade
+            |   license.jade
+            |   ...
+            tutorial/
+        ```

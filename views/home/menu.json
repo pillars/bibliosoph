@@ -4,13 +4,21 @@
         "children": [
             "intro",
             "getstarted",
-            ["usage", [
-                "usage_editsiteinfo",
-                "usage_deploy"
-            ]],
             "changelog",
             "license"
         ]
+    },
+    {
+        "title": "Usage",
+        "children": [
+            "usage_intro",
+            "usage_editsiteinfo",
+            ["usage_addpage", [
+                "usage_addpage_write",
+                "usage_addpage_menu",
+                "usage_addpage_route"
+            ]],
+            "usage_deploy"
+        ]
     }
-    
 ]

@@ -1,0 +1,38 @@
+- title('Write a section')
+
+div.left
+    :markdown
+        #### How to write a section
+
+        Just create a file inside the **tutorial** folder (or whatever you named it) you previouly created. For instance, let's add a `intro.jade` template.
+
+        The `title()` function let you define a title for the menu item associated with the file. This will make more sense when we see what goes in the `menu.json`.
+
+        
+        ** One column layouts: **
+        If you use the `one_col` or `one_col_nav` layout, you are free to use whatever html structure you want. Note that jade provide a `:markdown` filter to write your documentation as Markdown. Bibliosoph use [marked](https://github.com/chjj/marked) to parse Markdown content.
+
+        ** Two columns layouts: **
+        If you use the `two_col` or `two_col_nav` layout, you have to wrap the left column into a `div.left` and the right column into a `div.right`. That way, Bibliosoph can properly style the content.
+  
+div.right
+    :markdown
+        ### Bibliosoph documentation structure
+        ```jade
+        - title('Introduction')
+
+        div.left
+            :markdown
+                ## A title
+
+                Some content...
+
+        div.right
+            :markdown
+                ### Another title
+
+                ` ``
+                A code block...
+                ` ``
+
+        ```

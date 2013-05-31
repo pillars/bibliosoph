@@ -1,0 +1,47 @@
+- title('Set the menu')
+
+div.left
+    :markdown
+        #### Define the menu
+
+        You have to define a `menu.json` file even if you don't use a layout with a navigation; otherwise Bibliosoph doesn't know what to load.
+
+        The `menu.json` is an array of objects. Each object represent a group of elements:
+
+        - **title:** the title to give to the group
+        - **children:** an array of the template file names.
+
+        Bibliosoph offers on extra level of nesting. In you want to have subsections, in the `children` array, replace the file name string by an array with two value, the file name first and secondly an array of the children file names. 
+
+        An exemple of nesting is given in the `Usage` group with the `usage_addpage`. It is also the section you are currently reading in Bibliosoph documentation so you can see on the left navigation how nested items are shown when the section is active.
+
+
+div.right
+    :markdown
+        ### Bibliosoph Home menu.json
+        ```json
+        [
+            {
+                "title": "Introduction",
+                "children": [
+                    "intro",
+                    "getstarted",
+                    "changelog",
+                    "license"
+                ]
+            },
+            {
+                "title": "Usage",
+                "children": [
+                    "usage_intro",
+                    "usage_editsiteinfo",
+                    ["usage_addpage", [
+                        "usage_addpage_write",
+                        "usage_addpage_menu",
+                        "usage_addpage_route"
+                    ]],
+                    "usage_deploy"
+                ]
+            }
+        ]
+        ```
