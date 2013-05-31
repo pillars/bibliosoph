@@ -1,0 +1,75 @@
+- title('Edit the site info')
+
+div.left
+    :markdown
+        ### Edit the site info
+
+        Just open the `config.json` file and start editing it to your needs.
+
+    dl
+      dt name
+      dd Used for the logo and page <code>#{'<title>'}</code> tag
+
+      dt code (optional)
+      dd Creates a button "See the code" in the header pointing to the url provided
+
+      dt github (optional)
+      dd Same as code but with the text "See on github"
+
+      dt bitbucket (optional)
+      dd Same as code but with the text "See on bitbucket"
+
+      dt download (optional)
+      dd Creates a button "Download" in the header pointing to your download
+
+      dt menu (optional)
+      dd 
+        | If you want plan on having multiple page on your site, you can define a menu by setting the <code>menu</code> config and passing it an array of objects. Each object takes the following attributes:
+        ul
+          li
+            strong title: 
+            | The title of the menu item
+          li
+            strong url: 
+            | The url of the menu item
+          li
+            strong class: 
+            | The css class of the menu item (required)
+          li
+            strong children: 
+            | An array of objects very much like the <code>menu</code> one. This will cause a sliding menu with the children items to open when you mouseover the menu item.
+
+
+div.right
+    :markdown
+        ### Exemple of a config.json
+        ```json
+        {
+            site: {
+                name      : 'Bibliosoph',
+                code      : 'http://yourprojectcodeurl.com',
+                github    : 'http://yourprojectgithuburl.com',
+                bitbucket : 'http://yourprojectbitbucketurl.com',
+                download  : 'http://yourprojectdownloadurl.com',
+                menu      : [
+                    {
+                        title     : 'Manifesto',
+                        url       : '/manifesto',
+                        class     : 'manifesto'
+                    },
+                    {
+                        title     : 'Components',
+                        url       : '/components',
+                        class     : 'components',
+                        children  : [
+                            {
+                                title   : 'Component 1',
+                                url     : '/components/component-1',
+                                class   : 'component-1'
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+        ```

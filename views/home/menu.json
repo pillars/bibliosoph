@@ -4,12 +4,12 @@
         "children": [
             "intro",
             "getstarted",
-            ["brand", [
-                "brand_editsiteinfo"
+            ["usage", [
+                "usage_editsiteinfo",
+                "usage_deploy"
             ]],
-            "deploy",
             "changelog",
-            "credits"
+            "license"
         ]
     }
     
