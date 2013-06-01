@@ -3,7 +3,7 @@
 div.left
     :markdown
 
-        #### Set the route
+        ### Set the route
 
         First you need to tell express that there is a new route. Open the `routes.js` file.
 
@@ -22,20 +22,22 @@ div.left
         - **getMenuHTML**: returns the html for the navigation. It is useful only if you use a view that render the navigation.
         - **getSectionsHTML**: returns the html for files.
 
+        Finally, you can pass an `active` variable to the view. It is only used to know which menu item should be displayed as active. Then, it must match the class you have defined in the `config.json` for the menu item.
 
 
 div.right
     :markdown
         ### Exemple of a config.json
-        ```js
+        ```javascript
         app.get('/', function (req, res) {
 
           folderToHTML.render(__dirname+'/views/home/');
 
           res.render('two_col_nav', {
-              title: "Documentation template"
-            , menu: folderToHTML.getMenuHTML()
-            , html: folderToHTML.getSectionsHTML()
+            title: "Documentation template",
+            active: 'home',
+            menu: folderToHTML.getMenuHTML(),
+            html: folderToHTML.getSectionsHTML()
           })
         });
         ```
