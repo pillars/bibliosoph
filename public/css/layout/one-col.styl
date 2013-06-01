@@ -1,9 +1,24 @@
 .one-col {
     .document-content {
-        padding: h(2)
         min-width: 300px
         min-height: 100%
         max-width: 600px
+
+        & > section {
+            padding: h(2)
+        }
+
+        & > section + section {
+            border-top: 1px solid $blue-bg-dark
+        }
+
+        pre code {
+            background: $blue-bg
+        }
+    }
+
+    .anchor {
+        float: left
     }
 
     &.with-nav {

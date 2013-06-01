@@ -10,48 +10,31 @@
               , "class"     : "home"
             }
           , {
-                "title"     : "Components"
+                "title"     : "Layouts"
               , "url"       : "#"
-              , "class"     : "components"
+              , "class"     : "layouts"
               , "children"  : [
                     {
-                        "title"     : "component 1"
-                      , "url"       : "/component-1"
-                      , "class"     : "component-1"
+                        "title"     : "One column"
+                      , "url"       : "/layout/one-col"
+                      , "class"     : "layout-one-col"
                     }
                   , {
-                        "title"     : "component 2"
-                      , "url"       : "/component-2"
-                      , "class"     : "component-2"
+                        "title"     : "One column with nav"
+                      , "url"       : "/layout/one-col-nav"
+                      , "class"     : "layout-one-col-nav"
                     }
                   , {
-                        "title"     : "component 3"
-                      , "url"       : "/component-3"
-                      , "class"     : "component-3"
+                        "title"     : "Two columns"
+                      , "url"       : "/layout/two-col"
+                      , "class"     : "layout-two-col"
+                    }
+                  , {
+                        "title"     : "Two columns with nav"
+                      , "url"       : "/layout/two-col-nav"
+                      , "class"     : "layout-two-col-nav"
                     }
 
-                ]
-            }
-          , {
-                "title"     : "Tutorials"
-              , "url"       : "#"
-              , "class"     : "tutorials"
-              , "children"  : [
-                    {
-                        "title"     : "Tutorial 1"
-                      , "url"       : "/tutorial-1"
-                      , "class"     : "tutorial-1"
-                    }
-                  , {
-                        "title"     : "Tutorial 2"
-                      , "url"       : "/tutorial-2"
-                      , "class"     : "tutorial-2"
-                    }
-                  , {
-                        "title"     : "Tutorial 3"
-                      , "url"       : "/tutorial-3"
-                      , "class"     : "tutorial-3"
-                    }
                 ]
             }
       ]
