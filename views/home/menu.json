@@ -18,6 +18,9 @@
                 "usage_addpage_menu",
                 "usage_addpage_route"
             ]],
+            ["elements", [
+                "elements_jsfiddle"
+            ]],
             "usage_deploy"
         ]
     }

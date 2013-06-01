@@ -1,0 +1,24 @@
+- title('JSFiddle')
+
+div.left
+    :markdown
+        ### JSFiddle embeds
+
+        You can easily embed JSFiddle playgrounds inside your documentation. Add a class `jsfiddle` to the ifram embed code. Then you can use JSFiddle options like you would normaly do.
+
+        Note that you can use inline style if you need but by default, the JSfiddle iframes take 100% of its parent width and 300px height.
+
+div.right
+    :markdown
+        ### Exemple of markup
+        ```none
+        div.full
+            iframe(class="jsfiddle", style="height: 200px", src="http://jsfiddle.net/user/GuxxM/embedded/")
+        ```
+
+div.full
+    :markdown
+        #### How it renders:
+
+    iframe(class="jsfiddle", style="height: 200px", src="http://jsfiddle.net/kalema/GuxxM/embedded/")
+  
