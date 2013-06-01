@@ -9,6 +9,7 @@ exports.init = function(app) {
 
       res.render('two_col_nav', {
           title: "Documentation template"
+        , active: 'home'
         , menu: folderToHTML.getMenuHTML()
         , html: folderToHTML.getSectionsHTML()
       })

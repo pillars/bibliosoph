@@ -19,7 +19,7 @@ html
         div.main-menu
           ul
             - for item in site.menu
-              li(class=item.children && 'parent' || '')
+              li(class=(item.children && 'parent ' || '')+((item.class == active) && 'active' || ''))
                 a(class=item.class, href=item.url) #{item.title}
         - for item in site.menu
           - if(item.children)

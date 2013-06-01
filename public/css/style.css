@@ -442,10 +442,12 @@ select:focus {
 .page-nav .main-menu li:first-child a {
   border-top: 0;
 }
-.page-nav .main-menu li:first-child:hover {
+.page-nav .main-menu li:first-child:hover,
+.page-nav .main-menu li:first-child.active {
   border-top: 0;
 }
-.page-nav .main-menu li:first-child:hover a {
+.page-nav .main-menu li:first-child:hover a,
+.page-nav .main-menu li:first-child.active a {
   border-top: 0;
 }
 .page-nav .main-menu li:last-child {
@@ -477,18 +479,22 @@ select:focus {
   margin-top: -10px;
   z-index: 0;
 }
-.page-nav .main-menu li:hover {
+.page-nav .main-menu li:hover,
+.page-nav .main-menu li.active {
   border-top: 1px solid #acbec4;
   border-bottom: 1px solid #acbec4;
   z-index: 10;
 }
-.page-nav .main-menu li:hover:after {
+.page-nav .main-menu li:hover:after,
+.page-nav .main-menu li.active:after {
   right: -8px;
 }
-.page-nav .main-menu li:hover:before {
+.page-nav .main-menu li:hover:before,
+.page-nav .main-menu li.active:before {
   right: -10px;
 }
-.page-nav .main-menu li:hover a {
+.page-nav .main-menu li:hover a,
+.page-nav .main-menu li.active a {
   background: #d1dce0;
   border-color: transparent;
 }
