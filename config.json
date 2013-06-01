@@ -5,24 +5,54 @@
       , "download"  : "https://github.com/pillars/bibliosoph"
       , "menu"      : [
             {
-                "title"     : "Tutorials"
-              , "url"       : "/tutorials"
-              , "class"     : "tutorials"
+                "title"     : "Home"
+              , "url"       : "/"
+              , "class"     : "home"
             }
           , {
                 "title"     : "Components"
-              , "url"       : "/components"
+              , "url"       : "#"
               , "class"     : "components"
               , "children"  : [
                     {
-
+                        "title"     : "component 1"
+                      , "url"       : "/component-1"
+                      , "class"     : "component-1"
                     }
+                  , {
+                        "title"     : "component 2"
+                      , "url"       : "/component-2"
+                      , "class"     : "component-2"
+                    }
+                  , {
+                        "title"     : "component 3"
+                      , "url"       : "/component-3"
+                      , "class"     : "component-3"
+                    }
+
                 ]
             }
           , {
-                "title"     : "Bla"
-              , "url"       : "/bla"
-              , "class"     : "bla"
+                "title"     : "Tutorials"
+              , "url"       : "#"
+              , "class"     : "tutorials"
+              , "children"  : [
+                    {
+                        "title"     : "Tutorial 1"
+                      , "url"       : "/tutorial-1"
+                      , "class"     : "tutorial-1"
+                    }
+                  , {
+                        "title"     : "Tutorial 2"
+                      , "url"       : "/tutorial-2"
+                      , "class"     : "tutorial-2"
+                    }
+                  , {
+                        "title"     : "Tutorial 3"
+                      , "url"       : "/tutorial-3"
+                      , "class"     : "tutorial-3"
+                    }
+                ]
             }
       ]
     }
