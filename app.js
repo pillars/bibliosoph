@@ -3,9 +3,11 @@ var express       = require('express')
   , nib           = require('nib')
   , jade          = require('jade')
   , marked        = require('marked')
+  , hljs          = require('highlight.js')
   , fs            = require('fs')
   , config        = require('./config')
   , app           = express();
+
 
 
 // Stylus compiler using nib
@@ -28,10 +30,18 @@ marked.setOptions({
   smartLists: true,
   langPrefix: 'language-',
   highlight: function(code, lang) {
-    if (lang === 'js') {
-      // return highlighter.javascript(code);
+    console.log(lang, code);
+    if(lang === 'none') {
+      return code;
     }
-    return code;
+    else if(lang === undefined) {
+      return hljs.highlightAuto(code).value;
+    } 
+    else {
+      return hljs.highlight(lang, code).value;
+    }
+
+
   }
 });
 
