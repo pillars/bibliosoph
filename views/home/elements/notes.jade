@@ -1,0 +1,39 @@
+- title('Notes')
+
+div.left
+    :markdown
+        ### Hints, Tips, notes
+
+        It is sometimes nice to be able to add a tip or hint to your documentation. It help breaks down the text into meaninful visual blocks. Bibliosoph has the following classes:
+
+        - `.hint`: creates a block that will be displayed in the left column in the two-column layout
+        - `.note`: creates a block that will be displayed in the right column in the two-column layout
+
+
+div.right
+    :markdown
+        ### Exemple of markup
+        ```none
+        div.hint
+            p This is a hint.
+
+        div.note
+            p This is a note.
+        ```
+
+div.left
+    h4 How it renders:
+
+    div.hint
+        p This is a hint.
+
+    div.note
+        p This is a note.
+
+div.right.thin-padding
+
+    div.hint
+        p This is a hint.
+
+    div.note
+        p This is a note.

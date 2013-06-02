@@ -814,8 +814,11 @@ body.leftNav .document-nav.fixed {
   float: right;
   padding-top: 96px;
 }
-.two-col .document-wrap .right > h2:first-child {
-  margin-top: -48px;
+.two-col .document-wrap .right.thin-padding {
+  padding-top: 72px;
+}
+.two-col .document-wrap .right.no-padding {
+  padding-top: 48px;
 }
 .two-col .document-wrap .right h3 {
   color: #acbec4;
@@ -830,7 +833,54 @@ body.leftNav .document-nav.fixed {
 .two-col.with-nav .document-content {
   margin-left: 248px;
 }
+.hint,
+.note {
+  background: #dce4e7;
+  position: relative;
+  margin: 48px 0 0 24px;
+  padding: 24px 24px 24px 48px;
+}
+.hint:before,
+.note:before {
+  background: url("../images/sprite.png") no-repeat 0 0;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+}
+.hint:after,
+.note:after {
+  background: #dce4e7;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  top: -32px;
+  left: -32px;
+  width: 48px;
+  height: 48px;
+  z-index: 1;
+}
+.hint:before {
+  background-position: 0 -50px;
+}
+.two-col .right .hint,
+.two-col .right .note {
+  background: #dce4e7;
+}
+.two-col .right .hint:after,
+.two-col .right .note:after {
+  background: #dce4e7;
+  border-color: #f2f7f9;
+}
 .jsfiddle {
+  border: 2px solid #acbec4;
   width: 100%;
   height: 300px;
 }

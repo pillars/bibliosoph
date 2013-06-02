@@ -1,0 +1,34 @@
+- title('Blocks')
+
+div.left
+    :markdown
+        ### Content blocks
+
+        Every section of the documentation is actually wrapped in a <section> tag. So are nested subsections. You are free to structure the content inside them the way you want. Though to make things easy, Bibliosoph comes with predefined structural block level:
+
+        - `div.left`: creates a block that will be displayed in the left column in the two-column layout
+        - `div.right`: creates a block that will be displayed in the right column in the two-column layout
+        - `div.full`: creates a block that will the full width; the two columns in the two-column layout
+
+    div.note
+        :markdown
+            The `div.right` style is little specific. By default, it has huge padding-top so that its content vertically align with the one from the `div.left`. However, it is not something you always want. To reduce the padding, add the class `div.right.thin-padding`. To remove it, add the class `div.right.no-padding`.
+
+    div.hint
+        :markdown
+            Those structural blocks are especially useful for the two-column layout. Though they will display nicely if you change the layout to a one-column one.
+
+
+div.right
+    :markdown
+        ### Exemple of markup
+        ```none
+        div.left
+            // content for the left column
+
+        div.right
+            // content for the right column
+
+        div.full
+            // content to display on the full width available
+        ```

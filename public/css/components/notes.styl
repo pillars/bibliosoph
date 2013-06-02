@@ -1,0 +1,53 @@
+.hint, .note {
+    background: $nav-bg
+    position: relative
+    margin: h(2) 0 0 h()
+    padding: h() h() h() h(2)
+
+    &:before {
+        background: url('../images/sprite.png') no-repeat 0 0
+        
+        content: ""
+        display: block
+        position: absolute
+        top: -12px
+        left: -12px
+        width: h()
+        height: h()
+        z-index: 2
+    }
+
+    &:after {
+        background: $nav-bg
+        border-radius: 50%
+        border: 8px solid #FFF
+
+        content: ""
+        display: block
+        position: absolute
+        top: -32px
+        left: -32px
+        width: h(2)
+        height: h(2)
+        z-index: 1
+    }
+}
+
+.hint {
+    &:before {
+        background-position: 0 -50px
+    }
+}
+
+.two-col {
+    .right {
+        .hint, .note {
+            background: $nav-bg
+
+            &:after {
+                background: $nav-bg
+                border-color: $blue-bg
+            }
+        }
+    }
+}
