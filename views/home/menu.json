@@ -11,17 +11,23 @@
     {
         "title": "Usage",
         "children": [
-            "usage_intro",
-            "usage_editsiteinfo",
-            ["usage_addpage", [
-                "usage_addpage_write",
-                "usage_addpage_menu",
-                "usage_addpage_route"
+            "usage/intro",
+            "usage/editsiteinfo",
+            ["usage/addpage", [
+                "usage/addpage_write",
+                "usage/addpage_menu",
+                "usage/addpage_route"
             ]],
-            ["elements", [
-                "elements_jsfiddle"
-            ]],
-            "usage_deploy"
+            "usage/deploy"
+        ]
+    },
+    {
+        "title": "Elements",
+        "children": [
+            "elements/intro",
+            "elements/blocks",
+            "elements/notes",
+            "elements/jsfiddle"
         ]
     }
 ]
