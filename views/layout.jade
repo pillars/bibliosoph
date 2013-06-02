@@ -20,7 +20,9 @@ html
           ul
             - for item in site.menu
               li(class=(item.children && 'parent ' || '')+((item.class == active) && 'active' || ''))
-                a(class=item.class, href=item.url) #{item.title}
+                a(class=item.class, href=item.url) 
+                  span
+                  | #{item.title}
         - for item in site.menu
           - if(item.children)
             ul(class="sub-menu "+item.class)

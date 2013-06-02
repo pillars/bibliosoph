@@ -628,6 +628,24 @@ select:focus {
   -ms-transition: 0.4s background linear;
   transition: 0.4s background linear;
 }
+.page-nav .main-menu a span {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 48px;
+  height: 48px;
+}
+.page-nav .main-menu .home span {
+  background: url("../images/sprite.png") no-repeat -50px 0;
+}
+.page-nav .main-menu .layouts span {
+  background: url("../images/sprite.png") no-repeat -100px 0;
+}
+.page-nav .main-menu .develop span {
+  background: url("../images/sprite.png") no-repeat -150px 0;
+}
 .page-nav .sub-menu {
   background: #d1dce0;
   border-right: 1px solid #acbec4;
