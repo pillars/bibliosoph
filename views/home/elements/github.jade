@@ -1,0 +1,30 @@
+- title('Github')
+
+div.left
+    :markdown
+        ### Github embeds
+
+        #### Github files
+        You can easily embed Github snippets inside your documentation. To do so create a `div.github-embed` and set some data attributes on it.
+
+        - **user:** the github user
+        - **repo:** the github repo name
+        - **path:** path to the file in the repo
+        - **sha:** sha of the file (as precedence over path)
+        - **lang:** (optional) the language of the code (used for hilights.js)
+
+
+        #### Gist
+        You can also embed gist by copy/pasting the embed code from the gist page.
+
+div.right
+    :markdown
+        ### Exemple of markup
+        ```none
+        div.full
+            div(class="github-embed", data-user="pillars", data-repo="bibliosoph", data-path="package.json")
+        ```
+
+        ### How it renders:
+
+    div(class="github-embed", data-user="pillars", data-repo="bibliosoph", data-path="package.json")

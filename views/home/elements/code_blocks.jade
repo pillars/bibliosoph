@@ -1,0 +1,38 @@
+- title('Code blocks')
+
+div.left
+    :markdown
+        ### Code blocks
+
+        If you use markdown, you can use code block like show on the right.
+
+        If you use raw html, just wrap the code block in a <pre><code> block.
+
+        Code blocks are highlighted using [highlight.js](http://softwaremaniacs.org/soft/highlight/en/).
+
+
+    div.hint
+        p Highlight.js automatically detect the language of your code block. If you want to force it, you can define it right after the <code>```</code> opening tag. For instance, you can do <code>```json</code>.
+
+    div.hint
+        p By default Bibliosoph include the basic highlight.js language package. If you have specific needs, replace the `js/highlight.js` file with a [custom build](http://softwaremaniacs.org/soft/highlight/en/download/).
+
+
+div.right
+    :markdown
+        ### Exemple of markup
+
+    pre
+        code
+            | :markdown
+            |   ```
+            |   // a code block in markdown
+            |   ```
+
+
+    :markdown
+        ```
+        pre
+            code
+                // a code block in jade
+        ```

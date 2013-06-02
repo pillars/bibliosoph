@@ -65,6 +65,22 @@ $(function() {
     $window.on('scroll', function() {
         $('.page-head').css('marginTop', Math.min(0, -1*$window.scrollTop()));
     }).trigger('scroll');
+
+
+    // Get github files
+    // ================
+    $('.github-embed').each(function() {
+        var $el = $(this);
+        console.log($el.get(0));
+        $.getGithubFile($el.data(), function(content) {
+            if($el.data('lang')) {
+                $el.append('<pre><code>'+hljs.highlight($el.data('lang'), content).value+'</code></pre>');    
+            }
+            else {
+                $el.append('<pre><code>'+hljs.highlightAuto(content).value+'</code></pre>');
+            }
+        });
+    });
 });
 
 
@@ -73,10 +89,12 @@ var submenu = function() {
     var opening
       , closing
       , $el
+      , $li
       , $submenu;
 
     this.init = function(el) {
         $el = el;
+        $li = $el.parent();
         $submenu = $('.page-nav .sub-menu.'+$el.attr('class'));
 
         $el.add($submenu)
@@ -88,6 +106,7 @@ var submenu = function() {
         clearTimeout(closing);
 
         opening = setTimeout(function() {
+            $li.addClass('active')
             $submenu.addClass('open')
         }, 300);
     }
@@ -95,6 +114,7 @@ var submenu = function() {
     this.close = function() {
         clearTimeout(opening);
         closing = setTimeout(function() {
+            $li.removeClass('active')
             $submenu.removeClass('open')
         }, 300);
     }
