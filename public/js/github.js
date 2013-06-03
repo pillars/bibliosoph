@@ -23,6 +23,8 @@ jQuery.extend({
       dataType: "jsonp",
       success: function(data) {
 
+        console.log(data)
+
         if (typeof data.data.content != "undefined") {
           if (data.data.encoding == "base64") {
             var startLineNum
@@ -40,7 +42,7 @@ jQuery.extend({
             startLineNum = (options.startLineNum === undefined) && 1 || options.startLineNum
             endLineNum = (options.endLineNum === undefined || options.endLineNum == 0) && contentArray.length || options.endLineNum
 
-            if(typeof callback == 'function') callback(contentArray.slice(startLineNum - 1, endLineNum).join("\n"))
+            if(typeof callback == 'function') callback(contentArray.slice(startLineNum - 1, endLineNum).join("\n"), data.data.path, data.data.html_url)
           }
         }
         else {

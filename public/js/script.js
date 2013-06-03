@@ -72,12 +72,12 @@ $(function() {
     $('.github-embed').each(function() {
         var $el = $(this);
         console.log($el.get(0));
-        $.getGithubFile($el.data(), function(content) {
+        $.getGithubFile($el.data(), function(content, path, url) {
             if($el.data('lang')) {
-                $el.append('<pre><code>'+hljs.highlight($el.data('lang'), content).value+'</code></pre>');    
+                $el.append('<pre><code>'+hljs.highlight($el.data('lang'), content).value+'</code><footer><span>Github file:</span> <a href="'+url+'">'+path+'</a></footer></pre>');    
             }
             else {
-                $el.append('<pre><code>'+hljs.highlightAuto(content).value+'</code></pre>');
+                $el.append('<pre><code>'+hljs.highlightAuto(content).value+'</code><footer><span>Github file:</span> <a href="'+url+'">'+path+'</a></footer></pre>');
             }
         });
     });
