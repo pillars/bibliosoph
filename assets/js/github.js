@@ -23,8 +23,6 @@ jQuery.extend({
       dataType: "jsonp",
       success: function(data) {
 
-        console.log(data)
-
         if (typeof data.data.content != "undefined") {
           if (data.data.encoding == "base64") {
             var startLineNum

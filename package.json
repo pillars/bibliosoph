@@ -4,11 +4,12 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "express"      : "3.2.4",
-    "jade"         : "*",
-    "stylus"       : "*",
-    "nib"          : "*",
-    "marked"       : "*",
-    "highlight.js" : "*"
+    "express"         : "3.2.4",
+    "jade"            : "*",
+    "stylus"          : "*",
+    "nib"             : "*",
+    "marked"          : "*",
+    "highlight.js"    : "*",
+    "connect-assets"  : "*"
   }
 }
