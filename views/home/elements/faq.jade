@@ -1,0 +1,29 @@
+- title('FAQ')
+
+div.left
+    :markdown
+        ### FAQ
+
+        You can create static FAQs by create a `dl.faq`. If you have many questions or long answers, it is sometimes nice to be able to collapse the answers. Add a `.accordion` class to turn the FAQ into accordion style.
+
+        #### How it renders:
+
+    dl.faq.accordion
+        dt Is this a question?
+        dd That's an answer!
+
+        dt Is this another question?
+        dd Yes it is!
+        
+
+div.right
+    :markdown
+        ### Exemple of markup
+        ```none
+        dl.faq.accordion
+            dt Is this a question?
+            dd That's an answer!
+
+            dt Is this another question?
+            dd Yes it is!
+        ```

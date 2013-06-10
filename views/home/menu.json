@@ -28,6 +28,7 @@
             "elements/content_blocks",
             "elements/code_blocks",
             "elements/notes",
+            "elements/faq",
             "elements/github",
             "elements/jsfiddle"
         ]

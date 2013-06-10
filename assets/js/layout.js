@@ -2,6 +2,7 @@
 //= require github
 //= require jquery
 //= require highlight
+//= require faq
 //= require document-nav
 
 $(function() {
