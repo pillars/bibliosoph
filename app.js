@@ -50,4 +50,4 @@ require('./routes').init(app)
 
 // Start server
 // ------------
-app.listen(3001)
+app.listen(process.env.PORT || 5000)
