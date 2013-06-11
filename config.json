@@ -1,9 +1,11 @@
 {
     "site": {
-        "name"      : "Bibliosoph"
-      , "github"    : "https://github.com/pillars/bibliosoph"
-      , "download"  : "https://github.com/pillars/bibliosoph"
-      , "menu"      : [
+        "name"          : "Bibliosoph"
+      , "domain"        : "pilla.rs"
+      , "analytics_id"  : "UA-41628335-1"
+      , "github"        : "https://github.com/pillars/bibliosoph"
+      , "download"      : "https://github.com/pillars/bibliosoph"
+      , "menu"          : [
             {
                 "title"     : "Home"
               , "url"       : "/"
