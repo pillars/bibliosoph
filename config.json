@@ -1,6 +1,6 @@
 {
     "site": {
-        "name"          : "Bibliosoph"
+        "name"          : "bibliosoph"
       , "domain"        : "pilla.rs"
       , "analytics_id"  : "UA-41628335-1"
       , "github"        : "https://github.com/pillars/bibliosoph"
@@ -33,7 +33,7 @@
                     }
                   , {
                         "title"     : "Two columns with nav"
-                      , "url"       : "/layout/two-col-nav"
+                      , "url"       : "/"
                       , "class"     : "layout-two-col-nav"
                     }
 
