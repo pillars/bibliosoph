@@ -2,10 +2,13 @@
     {
         "title": "Introduction",
         "children": [
-            "intro",
-            "getstarted",
-            "changelog",
-            "license"
+            "intro/intro",
+            ["intro/getstarted", [
+                "intro/getstarted-grunt",
+                "intro/getstarted-git"
+            ]],
+            "intro/changelog",
+            "intro/license"
         ]
     },
     {
