@@ -4,9 +4,11 @@ div.left
     :markdown
         ## Get started
 
+        ### Using Git
+
         Three small steps to get it running:
 
-        - Clone the github repo
+        - Clone the project github repo
         - Install module
         - Start server
 
@@ -19,6 +21,30 @@ div.right
         ```
         git clone git@github.com:pillars/bibliosoph.git my-documentation-website
         cd my-documentation-website
+        npm install
+        node app.js
+        ```
+
+div.left
+    :markdown
+        ### Using Grunt and grunt-init
+
+        The advantage of using grunt-init is that it will guide you into populating the config.json.
+
+        - Clone the grunt-init github repo
+        - Init bibliosoph and answer the questions
+        - Start server
+
+        Then go to `http://localhost:5000/` and see the base template. It's time to customize it to your needs.
+
+div.right
+    :markdown
+        ### Commands to run
+        ```
+        git clone git@github.com:pillars/grunt-init-bibliosoph.git ~/.grunt-init/bibliosoph
+        mkdir my-documentation-website
+        cd my-documentation-website
+        grunt-init bibliosoph
         npm install
         node app.js
         ```
