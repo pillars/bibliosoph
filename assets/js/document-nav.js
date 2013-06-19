@@ -1,4 +1,4 @@
-$(function() {
+$(window).load(function() {
 
     var $documentNav = $('.document-nav');
 
@@ -6,11 +6,20 @@ $(function() {
 
         var targets = []
           , $window = $(window)
-          , changeHash = false;
+          , _ignoreHashChange = true
+          , locationHash = location.hash;
 
         $documentNav.find('a').each(function() {
             targets.push( $($(this).attr('href')) )
         });
+
+
+        if(locationHash) {
+            $('html,body').animate({ scrollTop: $('a'+locationHash).offset().top }, 1, 'linear', function() {
+               _ignoreHashChange = false; 
+               $window.trigger('scroll');
+            });
+        }
 
         function setActive(hash) {
             var $current = $documentNav.find('[href='+hash+']')
@@ -28,11 +37,13 @@ $(function() {
                 $parent.addClass('active')
             }
 
-            if(history.pushState) {
-                history.pushState(null, null, hash);
-            }
-            else {
-                location.hash = hash;
+            if(!_ignoreHashChange) {
+                if(history.pushState) {
+                    history.pushState(null, null, hash);
+                }
+                else {
+                    location.hash = hash;
+                }
             }
         }
 
@@ -40,7 +51,6 @@ $(function() {
         // ===================
         $window.on('scroll', function() {
             var scrollTop = $window.scrollTop();
-            console.log ('scroll', scrollTop);
 
             $.each( targets, function($index, $el) {
                 var sectionBottom = (targets[$index+1] && targets[$index+1].offset().top - 1) || $window.height()
@@ -49,6 +59,7 @@ $(function() {
                     return false;
                 }
             });
+
         });
     }
 });

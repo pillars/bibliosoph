@@ -16,7 +16,7 @@ $(function() {
 
         $('.page-nav, .document-nav').toggleClass('fixed', scrollTop > 49);
         $('.page-head').css('marginTop', Math.min(0, -1*scrollTop));
-    });
+    }).trigger('scroll');
 
 
     // Get github files
