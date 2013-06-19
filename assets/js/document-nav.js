@@ -5,14 +5,16 @@ $(function() {
     if($documentNav.length) {
 
         var targets = []
-          , $window = $(window);
+          , $window = $(window)
+          , changeHash = false;
 
         $documentNav.find('a').each(function() {
             targets.push( $($(this).attr('href')) )
         });
 
-        function setActive($current) {
-            var $parent = $current.closest('li')
+        function setActive(hash) {
+            var $current = $documentNav.find('[href='+hash+']')
+              , $parent = $current.closest('li')
               , $parentParent = $parent.parent().closest('li');
 
 
@@ -21,28 +23,29 @@ $(function() {
 
             if($parentParent.length) {
                 $parentParent.addClass('active')
-            } else {
+            } 
+            else {
                 $parent.addClass('active')
             }
-        }
 
-        // HASH change, update menu
-        // ========================
-        $window.on('hashchange', function() {
-            setTimeout(function() {
-                setActive($documentNav.find('[href='+location.hash+']'))
-            }, 1);
-        });
+            if(history.pushState) {
+                history.pushState(null, null, hash);
+            }
+            else {
+                location.hash = hash;
+            }
+        }
 
         // Scroll, update menu
         // ===================
         $window.on('scroll', function() {
             var scrollTop = $window.scrollTop();
+            console.log ('scroll', scrollTop);
 
             $.each( targets, function($index, $el) {
                 var sectionBottom = (targets[$index+1] && targets[$index+1].offset().top - 1) || $window.height()
                 if ($el.length && scrollTop - sectionBottom < -48) {
-                    setActive($documentNav.find('[href=#'+$el.attr('id')+']'))
+                    setActive('#'+$el.attr('id'))
                     return false;
                 }
             });
