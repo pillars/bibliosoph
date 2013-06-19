@@ -7,10 +7,12 @@ html
     header.page-head
       a(class="logo", href="/") #{site.name}
       .page-cta
-        - if(site.github)
-          a(class="github", href=site.github) See on github
-        - if(site.repository)
-          a(class="repository", href=site.repository) Code
+        - if(site.repository && site.repository.match(/github/))
+          a(class="github", href=site.repository) See on github
+        - else if(site.repository && site.repository.match(/bitbucket/))
+          a(class="bitbucket", href=site.repository) See on bitbucket
+        - else if(site.repository)
+          a(class="repository", href=site.repository) See the code
         - if(site.download)
           a(class="download", href=site.download) Download
     
