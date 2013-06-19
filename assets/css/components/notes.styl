@@ -1,7 +1,7 @@
 .hint, .note {
     background: $nav-bg
     position: relative
-    margin: h(2) 0 0 h()
+    margin: h(2) 0 h() h()
     padding: h() h() h() h(2)
 
     &:before {
@@ -30,6 +30,10 @@
         width: h(2)
         height: h(2)
         z-index: 1
+    }
+
+    &:last-child {
+        margin-bottom: 0;
     }
 }
 
