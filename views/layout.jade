@@ -33,6 +33,12 @@ html
 
     block content
 
+    - if(site.credits)
+      footer.page-footer
+        :markdown
+          Powered by [Bibliosoph](https://github.com/pillars/bibliosoph)
+
+
     != js('layout')
 
     - if(site.analytics_id)
