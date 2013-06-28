@@ -2,7 +2,7 @@
 //= require github
 //= require jquery
 //= require highlight
-//= require faq
+//= require accordion
 //= require document-nav
 
 $(function() {

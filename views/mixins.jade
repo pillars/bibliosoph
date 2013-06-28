@@ -1,0 +1,25 @@
+mixin rest(title, method, url, parameters)
+  div.title
+    h3
+      = title
+    div(class="method")
+      span(class=method)
+        = method
+    div.url
+      = url
+
+  div.description
+    table
+      thead 
+        tr
+          th Parameter name
+          th Value
+          th Description
+      - each parameter in parameters
+        tr
+          td 
+            = parameter['name']
+          td 
+            = parameter['value']
+          td 
+            = parameter['description']

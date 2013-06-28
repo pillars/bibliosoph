@@ -1,0 +1,87 @@
+.rest {
+    border: 2px solid $subnav-hover
+
+    .title {
+        background: $nav-bg
+        overflow: hidden
+        position relative
+        padding: h(.5)
+
+        h3 {
+            padding-right: 310px
+        }
+
+        .method {
+            position: absolute
+            top: h(.5)
+            right: h()+200px
+            width: 80px
+
+            span {
+                border-radius: 5px
+                box-shadow: inset rgba(0, 0, 0, 0.3) 0 0 4px
+                color: #FFF
+                font-family: $f-mono
+                line-height: h()
+                text-transform: uppercase
+                padding: 4px 8px
+
+                &.get       { background: #090 }
+                &.post      { background: #C90 }
+                &.put       { background: #36F }
+                &.delete    { background: #C30 }
+            }
+        }
+
+        .url {
+            display: block
+            position: absolute
+            top: h(.5)
+            right: h()
+            width: 200px
+        }
+    }
+    
+    .description {
+        background: #FFF
+        padding: h(.5)
+
+        table {
+            border-spacing: 0
+            border-collapse: collapse
+            width: 100%
+
+            td, th {
+                border-bottom: 1px solid $nav-bg
+                line-height: h()
+                height: h() - 1px
+            }
+
+            thead th {
+                color: $subnav-hover
+                font-weight: normal
+            }
+
+            tbody tr:last-child {
+                td, th {
+                    border-bottom: none
+                }
+            }
+
+            th {
+                text-align: left
+            }
+        }
+
+        & + .title {
+            border-top: 2px solid $subnav-hover
+        }
+    }
+
+    &.accordion {
+        .title {
+            cursor: pointer
+        }
+    }
+
+}
