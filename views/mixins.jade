@@ -9,17 +9,21 @@ mixin rest(title, method, url, parameters)
       = url
 
   div.description
-    table
-      thead 
-        tr
-          th Parameter name
-          th Value
-          th Description
-      - each parameter in parameters
-        tr
-          td 
-            = parameter['name']
-          td 
-            = parameter['value']
-          td 
-            = parameter['description']
+    - if (parameters && parameters.length)
+      table
+        thead 
+          tr
+            th Parameter name
+            th Value
+            th Description
+        - each parameter in parameters
+          tr
+            td 
+              = parameter['name']
+            td 
+              = parameter['value']
+            td 
+              = parameter['description']
+
+    - else if (typeof parameters == 'string')
+      = parameters

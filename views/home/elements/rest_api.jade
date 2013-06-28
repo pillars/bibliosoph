@@ -14,7 +14,7 @@ div.full
     h3 How it renders:
 
     div.rest.accordion
-        mixin rest('Get all the users', 'get', '/users/all', [{ name: "bla" , value: "ble" , description: "desc" }, { name: "bla" , value: "ble" , description: "desc" }])
-        mixin rest('Create a user', 'post', '/users', [{ name: "bla" , value: "ble" , description: "desc" }])
-        mixin rest('Edit a user', 'put', '/users/:id', [{ name: "bla" , value: "ble" , description: "desc" }])
-        mixin rest('Delete a user', 'delete', '/users/:id', [{ name: "bla" , value: "ble" , description: "desc" }])
+        mixin rest('Get a users', 'get', '/users/:id', [{ name: "id" , value: "1" , description: "The id of the user to get" }])
+        mixin rest('Create a user', 'post', '/users', [{ name: "email" , value: "email@exemple.com" , description: "The email for the new user" }, { name: "password" , value: "12345" , description: "The password for the new user" }])
+        mixin rest('Edit a user', 'put', '/users/:id', [{ name: "id" , value: "1" , description: "The id of the user to edit" }, { name: "email" , value: "email@exemple.com" , description: "The new email for the user to edit" }, { name: "password" , value: "12345" , description: "The new password for the user to edit" }])
+        mixin rest('Delete a user', 'delete', '/users/:id', [{ name: "id" , value: "1" , description: "The id of the user to delete" }])
