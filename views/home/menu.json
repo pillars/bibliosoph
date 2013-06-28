@@ -21,6 +21,7 @@
                 "usage/addpage_menu",
                 "usage/addpage_route"
             ]],
+            "usage/customize",
             "usage/deploy"
         ]
     },
@@ -32,6 +33,7 @@
             "elements/code_blocks",
             "elements/notes",
             "elements/faq",
+            "elements/rest_api",
             "elements/github",
             "elements/jsfiddle"
         ]

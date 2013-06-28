@@ -4,7 +4,7 @@ div.left
     :markdown
         ## Edit the site info
 
-        Just open the `config.json` file and start editing it to your needs.
+        Just open the `config.json` file and start editing it to your needs. 
 
     dl
       dt name
@@ -12,12 +12,6 @@ div.left
 
       dt repository (optional)
       dd Creates a button "See the code" in the header pointing to the url provided
-
-      dt github (optional)
-      dd Same as code but with the text "See on github"
-
-      dt bitbucket (optional)
-      dd Same as code but with the text "See on bitbucket"
 
       dt download (optional)
       dd Creates a button "Download" in the header pointing to your download
@@ -27,6 +21,9 @@ div.left
 
       dt domain (optional)
       dd Which domain is Google Analytics setup for
+
+      dt credits
+      dd Wether or not you want to show us some love and add a discrete "Powered by Bibliosoph" link
 
       dt menu (optional)
       dd 
@@ -45,21 +42,8 @@ div.left
             strong children: 
             | An array of objects very much like the <code>menu</code> one. This will cause a sliding menu with the children items to open when you mouseover the menu item.
 
-    div.hint
-      :markdown
-        Bibliosoph comes with the [TWG icon set](http://blog.twg.ca/2010/11/retina-display-icon-set/) (optimized for the web). To add an icon to a menu item, add something like this to your css:
-
-        ```
-        .my-menu-item-class span { 
-          background: url('../images/icons/the-desired-icon.png') no-repeat 0 0;
-        }
-        ```
-
-    div.hint
-      :markdown
-        When you edit css, we recommend to create a new file that you add in the `css/style.styl` file. It will the automatically be imported. Do not overwrite Bibliosoph stylus files as the customization would be lost if you ever update Bibliosoph.
-
-
+    .hint
+      p If you used Yeoman to install Bibliosoph, the <code>config.json</code> is already populated based on the answer you gave to the generator.
 
 
 div.right
@@ -71,10 +55,9 @@ div.right
                 "name"          : "Bibliosoph",
                 "domain"        : "pilla.rs",
                 "analytics_id"  : "UA-41628335-1",
-                "code"          : "http://yourprojectcodeurl.com",
-                "github"        : "http://yourprojectgithuburl.com",
-                "bitbucket"     : "http://yourprojectbitbucketurl.com",
+                "repository"    : "http://yourprojectcodeurl.com",
                 "download"      : "http://yourprojectdownloadurl.com",
+                "credits"       : true,
                 "menu"          : [
                     {
                         "title"     : "Manifesto",

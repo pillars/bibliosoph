@@ -2,11 +2,11 @@
 
 div.left
     :markdown
-        ## Add a page to the documentation
+        ## Add a page
 
-        As a convention, each documentation page is contained into a folder inside the `views/`. For instance the homepage documentation of Bibliosoph sites in `views/home`. If you want to create a **tutorial** page, just add a folder.
+        As a convention, each documentation page is contained into a folder inside the `views/`. For instance the homepage documentation of Bibliosoph sits in `views/home/`. If you want to create a **tutorial** page, just add a `views/tutorial/` folder.
 
-        In this folder, you have `*.jade` templates files and a `menu.json`. The fade files are sections of tbe documentation and the json file is there to define in what order you want to include the templates.
+        A documentation folder has `*.jade` templates files and a `menu.json`. The `*.jade` files are sections of the documentation and the `menu.json` file is there to define in what order you want to include the sections; it is also used to generate the navigation (if you use a layout with a navigation).
 
    
 div.right

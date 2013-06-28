@@ -1,0 +1,20 @@
+include /mixins
+- title('REST API')
+
+div.left
+    :markdown
+        ## REST API
+
+        If you need to document a REST API, you can easily create documentations like so:
+
+
+div.right
+
+div.full
+    h3 How it renders:
+
+    div.rest.accordion
+        mixin rest('Get all the users', 'get', '/users/all', [{ name: "bla" , value: "ble" , description: "desc" }, { name: "bla" , value: "ble" , description: "desc" }])
+        mixin rest('Create a user', 'post', '/users', [{ name: "bla" , value: "ble" , description: "desc" }])
+        mixin rest('Edit a user', 'put', '/users/:id', [{ name: "bla" , value: "ble" , description: "desc" }])
+        mixin rest('Delete a user', 'delete', '/users/:id', [{ name: "bla" , value: "ble" , description: "desc" }])
