@@ -1,8 +1,8 @@
 .rest {
-    border: 2px solid $subnav-hover
+    border: 2px solid $rest_border
 
     .title {
-        background: $nav-bg
+        background: $rest_bg
         overflow: hidden
         position relative
         padding: h(.5)
@@ -52,13 +52,13 @@
             width: 100%
 
             td, th {
-                border-bottom: 1px solid $nav-bg
+                border-bottom: 1px solid $rest_bg
                 line-height: h()
                 height: h() - 1px
             }
 
             thead th {
-                color: $subnav-hover
+                color: $rest_border
                 font-weight: normal
             }
 
@@ -74,7 +74,7 @@
         }
 
         & + .title {
-            border-top: 2px solid $subnav-hover
+            border-top: 2px solid $rest_border
         }
     }
 

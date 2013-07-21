@@ -1,5 +1,5 @@
 .hint, .note {
-    background: $nav-bg
+    background: $note_bg
     position: relative
     margin: h(2) 0 h() h()
     padding: h() h() h() h(2)
@@ -18,7 +18,7 @@
     }
 
     &:after {
-        background: $nav-bg
+        background: $note_bg
         border-radius: 50%
         border: 8px solid #FFF
 
@@ -35,6 +35,12 @@
     &:last-child {
         margin-bottom: 0;
     }
+
+    h1, h2, h3, h4, h5, h6, p, li, dt, dl {
+      code {
+        background: $right_col_bg
+      }
+    }
 }
 
 .hint {
@@ -46,11 +52,11 @@
 .two-col {
     .right {
         .hint, .note {
-            background: $nav-bg
+            background: $note_bg
 
             &:after {
-                background: $nav-bg
-                border-color: $blue-bg
+                background: $note_bg
+                border-color: $right_col_bg
             }
         }
     }
