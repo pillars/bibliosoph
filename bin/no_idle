@@ -1,0 +1,6 @@
+#! /app/bin/node
+function noIdle() {
+  http = require('http');
+  http.get({host:'bibliosoph.pilla.rs',path:'/'})
+}
+noIdle();
