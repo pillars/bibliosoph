@@ -8,4 +8,13 @@ div.left
 
     .hint
         :markdown
-            We use the free plan of Heroku. And to prevent the idling, we have [BlameStella](https://www.blamestella.com/) pinging our app.
+            We use the free plan of Heroku. And to prevent the [idling](https://devcenter.heroku.com/articles/dynos#dyno-idling), we use the scheduler to ping our site every 50 minutes.
+
+            To get started, follow the comprehensive [guide about node on Heroku](https://devcenter.heroku.com/articles/nodejs). Once logged in with the heroku cli, run the following commands:
+
+            ```
+            heroku addons:add scheduler:standard
+            heroku addons:open scheduler
+            ```
+
+            In the webpage that opens, set the task to `no_idle` and the frequency to `every 10 minutes`. The task will ping your site every 10 minutes, preventing it from idling.
