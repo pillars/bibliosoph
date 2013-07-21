@@ -12,28 +12,43 @@
               , "class"     : "home"
             }
           , {
-                "title"     : "Layouts"
+                "title"     : "Docs"
+              , "url"       : "/docs"
+              , "class"     : "docs"
+            }
+          , {
+                "title"     : "Submenu"
               , "url"       : "#"
               , "class"     : "layouts"
               , "children"  : [
                     {
-                        "title"     : "One column"
-                      , "url"       : "/layout/one-col"
+                        "title"     : "Item 1"
+                      , "url"       : "#"
                       , "class"     : "layout-one-col"
                     }
                   , {
-                        "title"     : "One column with nav"
-                      , "url"       : "/layout/one-col-nav"
+                        "title"     : "Item 2"
+                      , "url"       : "#"
                       , "class"     : "layout-one-col-nav"
                     }
                   , {
-                        "title"     : "Two columns"
-                      , "url"       : "/layout/two-col"
+                        "title"     : "Item 3"
+                      , "url"       : "#"
                       , "class"     : "layout-two-col"
                     }
                   , {
-                        "title"     : "Two columns with nav"
-                      , "url"       : "/"
+                        "title"     : "Item 4"
+                      , "url"       : "#"
+                      , "class"     : "layout-two-col-nav"
+                    }
+                  , {
+                        "title"     : "Item 5"
+                      , "url"       : "#"
+                      , "class"     : "layout-two-col"
+                    }
+                  , {
+                        "title"     : "Item 6"
+                      , "url"       : "#"
                       , "class"     : "layout-two-col-nav"
                     }
 

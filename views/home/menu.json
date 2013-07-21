@@ -2,40 +2,13 @@
     {
         "title": "Introduction",
         "children": [
-            "intro/intro",
-            ["intro/getstarted", [
-                "intro/getstarted-yeoman",
-                "intro/getstarted-git"
+            "intro",
+            ["getstarted", [
+                "getstarted-yeoman",
+                "getstarted-git"
             ]],
-            "intro/changelog",
-            "intro/license"
-        ]
-    },
-    {
-        "title": "Usage",
-        "children": [
-            "usage/intro",
-            "usage/editsiteinfo",
-            ["usage/addpage", [
-                "usage/addpage_write",
-                "usage/addpage_menu",
-                "usage/addpage_route"
-            ]],
-            "usage/customize",
-            "usage/deploy"
-        ]
-    },
-    {
-        "title": "Elements",
-        "children": [
-            "elements/intro",
-            "elements/content_blocks",
-            "elements/code_blocks",
-            "elements/notes",
-            "elements/faq",
-            "elements/rest_api",
-            "elements/github",
-            "elements/jsfiddle"
+            "changelog",
+            "license"
         ]
     }
 ]
