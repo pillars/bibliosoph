@@ -31,27 +31,30 @@
         .full, .left, .right {
             box-sizing: border-box
             float: left
-            padding: h(2)
+            padding: h(1.5)
             width: 50%
         }
         .full {
             clear: both
             width: 100%
         }
+        .left, .right {
+            max-width: 680px;
+        }
         .left {
             clear: both
         }
         .right {
-            clear: right
-            float: right
-            padding-top: h(4)
+            // clear: right
+            float: left
+            padding-top: h(3.5)
 
             &.thin-padding {
-                padding-top: h(3)
+                padding-top: h(2.5)
             }
 
             &.no-padding {
-                padding-top: h(2)
+                padding-top: h(1.5)
             }
 
             h3 {
@@ -65,12 +68,6 @@
                     margin: 0
                 }
             }
-        }
-    }
-
-    &.with-nav {
-        .document-content {
-            margin-left: 248px
         }
     }
 }

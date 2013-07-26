@@ -195,13 +195,12 @@ $main_menu_width = h(4)
             }
         }
 
-        .home span       { background: url('../images/sprite.png') no-repeat -50px 0 }
-        .layouts span    { background: url('../images/sprite.png') no-repeat -100px 0 }
-        .develop span    { background: url('../images/sprite.png') no-repeat -150px 0 }
-        .setting span    { background: url('../images/sprite.png') no-repeat -50px -50px }
-        .docs span       { background: url('../images/sprite.png') no-repeat -100px -50px }
-        .tutorial span   { background: url('../images/sprite.png') no-repeat -150px -50px }
-
+        .home span       { background: url('../images/icons/home_48.png') no-repeat 0 0 }
+        .layouts span    { background: url('../images/icons/display_off_48.png') no-repeat 0 0 }
+        .develop span    { background: url('../images/icons/console_48.png') no-repeat 0 0 }
+        .setting span    { background: url('../images/icons/gear_48.png') no-repeat 0 0 }
+        .docs span       { background: url('../images/icons/document_48.png') no-repeat 0 0 }
+        .tutorial span   { background: url('../images/icons/book_48.png') no-repeat 0 0 }
     }
 
     .sub-menu {
@@ -279,8 +278,8 @@ $main_menu_width = h(4)
     top: 0
     bottom: 0
     left: 0
-    padding: h() 0 h() h()
-    width: 224px
+    padding: h() 0 h() h(1.5)
+    width: 212px
 
     &.fixed {
         position: fixed
@@ -353,10 +352,10 @@ $main_menu_width = h(4)
 
 // LAYOUT WITH THE LEFT MENU
 // -------------------------
-body.leftNav {
+body.left-nav {
     .page-head {
         .logo {
-            margin-left: 118px;
+            margin-left: 130px;
         }
     }
 
@@ -367,8 +366,58 @@ body.leftNav {
     .document-nav.fixed {
         left: $main_menu_width
     }
-
 }
 
-// @media only screen and (min-width : 1400px) {
-// }
+body.left-nav-narrow {
+    $main_menu_narrow_width = h(2)
+
+    .page-nav {
+        .main-menu {
+
+            ul {
+                width: $main_menu_narrow_width
+            }
+
+            li {
+                height: $main_menu_narrow_width
+            }
+
+            a {
+                text-indent: -9999px
+                padding: 0
+                height: h(2)
+
+                span {
+                    top: h(.5)
+                    left: h(.5)
+                    width: h()
+                    height: h()
+                }
+            }
+
+            .home span       { background: url('../images/icons/home_24.png') no-repeat 0 0 }
+            .layouts span    { background: url('../images/icons/display_off_24.png') no-repeat 0 0 }
+            .develop span    { background: url('../images/icons/console_24.png') no-repeat 0 0 }
+            .setting span    { background: url('../images/icons/gear_24.png') no-repeat 0 0 }
+            .docs span       { background: url('../images/icons/document_24.png') no-repeat 0 0 }
+            .tutorial span   { background: url('../images/icons/book_24.png') no-repeat 0 0 }
+        }
+    }
+    .page-head .logo {
+        margin-left: 82px
+    }
+
+    .page-body {
+        left: $main_menu_narrow_width
+    }
+
+    .document-nav.fixed {
+        left: $main_menu_narrow_width
+    }
+}
+
+body.with-nav {
+    .document-content {
+        margin-left: 248px
+    }
+}

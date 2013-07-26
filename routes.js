@@ -6,7 +6,7 @@ exports.init = function(app) {
 
       folderToHTML.render(__dirname+'/views/home/');
 
-      res.render('two_col_nav', {
+      res.render('one_col_nav', {
           title: 'Get started'
         , active: 'home'
         , menu: folderToHTML.getMenuHTML()

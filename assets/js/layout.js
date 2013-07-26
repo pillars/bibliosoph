@@ -11,6 +11,14 @@ $(function() {
 
     // Scroll, show/hide header
     // ========================
+    $window.on('resize', function() {
+        var windowWidth = $window.width();
+
+        $('body').toggleClass('left-nav-narrow', windowWidth < 1100)
+    }).trigger('resize');
+
+    // Scroll, show/hide header
+    // ========================
     $window.on('scroll', function() {
         var scrollTop = $window.scrollTop();
 

@@ -1,0 +1,139 @@
+// Screens smaller than 1300
+@media only screen and (max-width: 1300px) {
+
+    .two-col {
+
+        .document-nav {
+            width: 174px;
+        }
+
+        &.with-nav {
+            .document-content {
+                margin-left: 174px + h()
+            }
+        }
+    }
+
+}
+
+// Screens smaller than 1100
+@media only screen and (max-width: 1100px) {
+
+    .two-col {
+        .document-nav {
+            display: none
+        }
+
+        &.with-nav {
+            .document-content {
+                margin-left: 0
+            }
+        }
+    }
+
+}
+
+
+// Screens smaller than 900
+@media only screen and (max-width: 900px) {
+
+    .one-col {
+        .document-nav {
+            width: 174px;
+        }
+
+        &.with-nav {
+            .document-content {
+                margin-left: 174px + h()
+            }
+        }
+    }
+
+    .two-col {
+        .document-nav {
+            display: block
+        }
+
+        &.with-nav {
+            .document-content {
+                margin-left: 174px + h()
+            }
+        }
+
+        one-col()
+
+        .document-wrap {
+            background: transparent
+            border: none
+            box-shadow: none
+
+            margin-left: 0
+
+            section {
+                margin-left: 0
+            }
+        }
+
+        .document-content {
+            .left, .right {
+                float: none
+                width: 100%
+            }
+        }
+    }
+}
+
+// Screens smaller than 760
+@media only screen and (max-width: 760px) {
+
+    .one-col {
+        .anchor {
+            margin-top: h(-1)
+        }
+    }
+
+}
+
+// Screens smaller than 660
+@media only screen and (max-width: 660px) {
+
+    .one-col {
+        .document-nav {
+            display: none
+        }
+
+        &.with-nav {
+            .document-content {
+                margin-left: 0
+            }
+        }
+    }
+
+    .two-col {
+        .document-nav {
+            display: none
+        }
+
+        &.with-nav {
+            .document-content {
+                margin-left: 0
+            }
+        }
+    }
+
+}
+
+// Screens greater than 1700
+@media only screen and (min-width : 1704px) {
+
+    .two-col {
+        .document-wrap {
+            margin-left: 680px
+
+            section {
+                margin-left: -680px
+            }
+        }
+    }
+
+}

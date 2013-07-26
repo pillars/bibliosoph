@@ -1,23 +1,49 @@
-.one-col {
+one-col() {
     .document-content {
+        $padding = h(1.5)
+
         min-width: 300px
         min-height: 100%
         max-width: 600px
 
         & > section {
-            padding: h(2)
+            padding: $padding
         }
 
         & > section + section {
             border-top: 1px solid $right_col_border
         }
 
+        section section {
+            margin: $padding 0
+
+            &:last-child {
+                margin-bottom: 0
+            }
+        }
+
         .left, .full {
-            margin: h(2) 0;
+            margin: $padding 0
+
+            &:first-child {
+                margin-top: 0
+            }
+
+            &:last-child {
+                margin-bottom: 0
+            }
+        }
+
+        .anchor + .left, .anchor + .right {
+            margin-top: 0
         }
 
         .right {
-            margin: h(-1) 0 h(2)
+            margin: ($padding/-2) 0 $padding
+
+            &:last-child {
+                margin-bottom: 0
+            }
         }
 
         pre code {
@@ -27,11 +53,11 @@
 
     .anchor {
         float: left
+        margin-top: h(-1.5)
     }
+}
 
-    &.with-nav {
-        .document-content {
-            margin-left: 248px
-        }
-    }
+
+.one-col {
+    one-col()
 }

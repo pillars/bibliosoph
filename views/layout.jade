@@ -1,9 +1,11 @@
+- var bodyClass = '';
+block vars
 !!!5
 html
   head
     title #{title} - #{site.name}
     != css('style')
-  body(class=site.menu && 'leftNav' || '')
+  body(class=(site.menu && 'left-nav ' || ' ')+'#{bodyClass}')
     header.page-head
       a(class="logo", href="/") #{site.name}
       .page-cta
