@@ -15,6 +15,11 @@ $(function() {
         var windowWidth = $window.width();
 
         $('body').toggleClass('left-nav-narrow', windowWidth < 1100)
+
+        $('.rest').each(function() {
+            $el = $(this)
+            $el.toggleClass('narrow', $el.closest('.full, .left, .right, section').width() < 500)
+        });
     }).trigger('resize');
 
     // Scroll, show/hide header
