@@ -4,7 +4,7 @@ block vars
 html
   head
     title #{title} - #{site.name}
-    meta(name="viewport", content="width=device-width")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
 
     != css('style')
   body(class=(site.menu && 'left-nav ' || ' ')+'#{bodyClass}')
