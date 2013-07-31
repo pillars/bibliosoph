@@ -95,9 +95,9 @@
 }
 
 // Screens smaller than 660
-@media only screen (max-width: 660px) {
+@media only screen and (max-width: 660px) {
 
-    .one-col {
+    .one-col, .two-col {
         .document-nav {
             display: none
         }
@@ -109,19 +109,7 @@
         }
     }
 
-    .two-col {
-        .document-nav {
-            display: none
-        }
-
-        &.with-nav {
-            .document-content {
-                margin-left: 0
-            }
-        }
-    }
 }
-
 
 // Screens greater than 1700
 @media only screen and (min-width : 1704px) {
