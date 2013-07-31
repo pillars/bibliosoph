@@ -145,17 +145,19 @@ $main_menu_width = h(4)
                 border-bottom: 1px solid $nav_border
                 z-index: 10
 
+                a {
+                    background: $nav_hover
+                    border-color: transparent
+                }
+            }
+
+            &.active {
                 &:after {
                     right: -1 * $arrow-size
                 }
 
                 &:before {
                     right: -1 * $arrow-border;
-                }
-
-                a {
-                    background: $nav_hover
-                    border-color: transparent
                 }
             }
         }
@@ -413,6 +415,158 @@ body.left-nav-narrow {
 
     .document-nav.fixed {
         left: $main_menu_narrow_width
+    }
+}
+
+body.bottom-nav {
+    $main_menu_narrow_width = h(2)
+
+    .page-nav {
+        position: fixed
+        top: auto
+        bottom: 0
+        left: 0
+        padding-top: 0
+        width: 100%
+        height: $main_menu_narrow_width
+
+        .main-menu {
+            border-left: 1px solid $nav_light
+            border-top: 1px solid $nav_border
+            box-shadow: 0 1px 2px 0 $nav_border
+            width: 100%
+            height: auto
+
+            ul {
+                width: auto
+                height: $main_menu_narrow_width
+            }
+
+            li {
+                border-top: none
+                border-bottom: none
+                border-left: 1px solid $nav_border
+                border-right: 1px solid $nav_light
+
+                float: left;
+                margin-top: 0
+                margin-left: -2px
+                padding-bottom: 0
+                width: $main_menu_narrow_width
+                height: $main_menu_narrow_width
+                
+                &:first-child {
+                    border-left: 0
+                    margin-left: 0
+                    padding-bottom: 0
+
+                    a {
+                        border-left: 0
+                    }
+
+                    &:hover, &.active {
+                        border-left: 0
+
+                        a {
+                            border-left: 0
+                        }
+                    }
+                }
+
+                &:last-child {
+                    border-right: 1px solid $nav_border
+                    // border-right: 0
+                }
+
+                $arrow-size = 6px
+                $arrow-border = $arrow-size + 2px
+
+                &:after, &:before {
+                    top: 0
+                    left: 50%
+                    right: auto
+                }
+
+                &:after {
+                    border-top: none
+                    border-bottom: $arrow-size solid $nav_hover
+                    border-left: $arrow-size solid transparent
+                    border-right: $arrow-size solid transparent
+
+                    margin-top: 0
+                    margin-left: -1 * $arrow-size
+                    z-index: 1
+                }
+
+                &:before {
+                    border-top: none
+                    border-bottom: $arrow-border solid $nav_border
+                    border-left: $arrow-border solid transparent
+                    border-right: $arrow-border solid transparent
+
+                    margin-top: 0
+                    margin-left: -1 * $arrow-border
+                }
+
+                &:hover, &.active {
+                    border-top: none
+                    border-bottom: none
+                    border-left: 1px solid $nav_border
+                    border-right: 1px solid $nav_border
+                }
+
+                &.active {
+                    &:after {
+                        top: -1 * $arrow-size
+                    }
+
+                    &:before {
+                        top: -1 * $arrow-border
+                    }
+                }
+            }
+        }
+
+        .sub-menu {
+            background: transparent
+            border-right: none
+
+            box-sizing: border-box
+            overflow: scroll
+            position: fixed
+            top: auto
+            bottom: 0
+            left: 0
+            right: 0
+            padding: 0
+            width: auto
+            max-height: 0
+
+            &.open {
+                padding: 0 0 $main_menu_narrow_width
+                max-height: 100%
+            }
+
+            li {
+                background: $nav_hover
+            }
+
+            a {
+                padding: 0 h(1.5)
+            }
+        }
+    }
+
+    .page-head .logo {
+        margin-left: 36px
+    }
+
+    .page-body {
+        left: 0
+    }
+
+    .document-nav.fixed {
+        left: 0
     }
 }
 

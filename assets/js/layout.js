@@ -14,7 +14,10 @@ $(function() {
     $window.on('resize', function() {
         var windowWidth = $window.width();
 
+
+
         $('body').toggleClass('left-nav-narrow', windowWidth < 1100)
+                 .toggleClass('bottom-nav', windowWidth < 560)
 
         $('.rest').each(function() {
             $el = $(this)
@@ -80,13 +83,7 @@ var submenu = function() {
     }
 
     this.toggle = function(event) {
-        var $link = $(event.target)
-
-        if($link.is('span')) {
-            $link = $link.parent()
-        }
-
-        if($link.attr('href') == '#' || $link.attr('href') == '') {
+        if($el.attr('href') == '#' || $el.attr('href') == '') {
             event.preventDefault()
         }
 
