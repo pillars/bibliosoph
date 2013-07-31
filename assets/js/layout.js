@@ -59,8 +59,10 @@ $(function() {
 
 
 var submenu = function() {
-    var opening
+    var self = this
+      , opening
       , closing
+      , state = 'close'
       , $el
       , $li
       , $submenu;
@@ -70,25 +72,55 @@ var submenu = function() {
         $li = $el.parent();
         $submenu = $('.page-nav .sub-menu.'+$el.attr('class'));
 
+        $el.on('click', this.toggle);
+
         $el.add($submenu)
-           .on('mouseenter', this.open)
-           .on('mouseleave', this.close);
+           .on('mouseenter', this.enter)
+           .on('mouseleave', this.leave);
+    }
+
+    this.toggle = function(event) {
+        var $link = $(event.target)
+
+        if($link.is('span')) {
+            $link = $link.parent()
+        }
+
+        if($link.attr('href') == '#' || $link.attr('href') == '') {
+            event.preventDefault()
+        }
+
+        if(state == 'close') {
+            self.open();
+        }
+        else {
+            self.close();
+        }
+    }
+
+    this.enter = function() {
+        clearTimeout(closing);
+        opening = setTimeout(function() {
+            self.open();
+        }, 300);
+    }
+
+    this.leave = function() {
+        clearTimeout(opening);
+        closing = setTimeout(function() {
+            self.close();
+        }, 300);
     }
 
     this.open = function() {
-        clearTimeout(closing);
-
-        opening = setTimeout(function() {
-            $li.addClass('active')
-            $submenu.addClass('open')
-        }, 300);
+        $li.addClass('active');
+        $submenu.addClass('open');
+        state = 'open';
     }
 
     this.close = function() {
-        clearTimeout(opening);
-        closing = setTimeout(function() {
-            $li.removeClass('active')
-            $submenu.removeClass('open')
-        }, 300);
+        $li.removeClass('active');
+        $submenu.removeClass('open');
+        state = 'close';
     }
 }
