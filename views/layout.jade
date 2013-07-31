@@ -4,6 +4,8 @@ block vars
 html
   head
     title #{title} - #{site.name}
+    meta(name="viewport", content="height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
     != css('style')
   body(class=(site.menu && 'left-nav ' || ' ')+'#{bodyClass}')
     header.page-head
