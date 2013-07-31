@@ -9,7 +9,7 @@ $main_menu_width = h(4)
     top: 0
     left: 0
     right: 0
-    height: $header_height
+    height: $header_height - 1px
     z-index: $z-header
 
     .logo {
@@ -64,7 +64,7 @@ $main_menu_width = h(4)
 
     .main-menu {
         background: $nav_bg
-        border-top: 1px solid $nav_light
+        border-top: 1px solid $nav_hover
         border-right: 1px solid $nav_border
         box-shadow: 1px 0 2px 0 $nav_border
         position: relative
@@ -211,7 +211,7 @@ $main_menu_width = h(4)
         list-style: none
         transition: 0.3s all cubic-bezier(0.86, 0, 0.07, 1)
 
-        // display: none
+        overflow: scroll
         position: absolute
         top: $header_height
         bottom: 0
@@ -223,6 +223,10 @@ $main_menu_width = h(4)
 
         &.open {
             right: -248px
+        }
+
+        li:first-child a {
+            border-top: 2px solid $nav_hover
         }
 
         li:last-child {
@@ -532,7 +536,6 @@ body.bottom-nav {
             border-right: none
 
             box-sizing: border-box
-            overflow: scroll
             position: fixed
             top: auto
             bottom: 0
