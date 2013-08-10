@@ -50,17 +50,12 @@ $main_menu_width = h(4)
 }
 
 .page-nav {
-    position: absolute
-    top: 0
+    box-sizing: border-box
+    position: fixed
+    top: $header_height
+    bottom: 0
     left: 0
-    padding-top: $header_height
-    height: 100%
     z-index: $z-page-nav
-
-    &.fixed {
-        position: fixed
-        top: -1 * $header_height
-    }
 
     .main-menu {
         background: $nav_bg

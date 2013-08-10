@@ -30,7 +30,8 @@ $(function() {
     $window.on('scroll', function() {
         var scrollTop = $window.scrollTop();
 
-        $('.page-nav, .document-nav').toggleClass('fixed', scrollTop > 49);
+        $('.page-nav').css('top', Math.min(48, Math.max(0, 48 - scrollTop)));
+        $('.document-nav').toggleClass('fixed', scrollTop > 49);
         $('.page-head').css('marginTop', Math.min(0, -1*scrollTop));
     }).trigger('scroll');
 
