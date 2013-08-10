@@ -6,12 +6,42 @@ $(window).load(function() {
 
         var targets = []
           , $window = $(window)
+          , _closeDocumentNav
+          , _documentNavVisible
           , _ignoreHashChange = true
           , locationHash = location.hash;
 
         $documentNav.find('a').each(function() {
             targets.push( $($(this).attr('href')) )
         });
+
+
+        $('.document-nav, .document-nav-trigger').on('mouseenter', function() {
+            clearTimeout(_closeDocumentNav);
+            $documentNav.css('display', 'block');
+            _documentNavVisible = true;
+        })
+
+        $('.document-nav, .document-nav-trigger').on('mouseleave', function() {
+            _closeDocumentNav = setTimeout(function() {
+                $documentNav.css('display', 'none');
+                _documentNavVisible = false;
+            }, 1000);
+        })
+
+        $('.document-nav-trigger').on('click', function(event) {
+            event.preventDefault();
+            if (_documentNavVisible) {
+                $documentNav.css('display', 'none');
+                _documentNavVisible = false;
+            }
+            else {
+                clearTimeout(_closeDocumentNav);
+                $documentNav.css('display', 'block');
+                _documentNavVisible = true;
+            }
+        })
+
 
 
         if(locationHash) {

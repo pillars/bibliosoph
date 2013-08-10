@@ -7,7 +7,7 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1")
 
     != css('style')
-  body(class=(site.menu && 'left-nav ' || ' ')+'#{bodyClass}')
+  body(class=(site.menu && 'left-nav ' || '')+'#{bodyClass}')
     header.page-head
       a(class="logo", href="/") #{site.name}
       .page-cta
@@ -24,6 +24,12 @@ html
       nav.page-nav
         div.main-menu
           ul
+            - if(bodyClass.indexOf('with-nav') != -1)
+              li(class="document-nav-trigger")
+                a(href="#")
+                  span
+                  span
+                  span
             - for item in site.menu
               li(class=(item.children && 'parent ' || '')+((item.class == active) && 'active' || ''))
                 a(class=item.class, href=item.url) 
