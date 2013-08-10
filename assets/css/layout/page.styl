@@ -283,8 +283,10 @@ $main_menu_width = h(4)
     top: 0
     bottom: 0
     left: 0
+    overflow: auto
     padding: h() 0 h() h(1.5)
     width: 212px
+    z-index: $z-document-nav
 
     &.fixed {
         position: fixed
@@ -407,9 +409,9 @@ body.left-nav-narrow {
 
                 a {
                     margin: 0
-                    padding: 8px 0 0
+                    padding: 4px 0 0
                     width: $main_menu_narrow_width
-                    height: $main_menu_narrow_width - 8px
+                    height: $main_menu_narrow_width - 4px
                 }
 
                 span {
@@ -444,6 +446,14 @@ body.left-nav-narrow {
         left: $main_menu_narrow_width
     }
 
+    .document-nav {
+        border-right: none
+        border-left: 1px solid $right_col_border
+        left: auto !important
+        right: 0
+        padding-bottom: h(3)
+    }
+
     .document-nav.fixed {
         left: $main_menu_narrow_width
     }
@@ -454,7 +464,7 @@ body.bottom-nav {
 
     .page-nav {
         position: fixed
-        top: auto
+        top: auto !important
         bottom: 0
         left: 0
         padding-top: 0
@@ -555,6 +565,11 @@ body.bottom-nav {
                         top: -1 * $arrow-border
                     }
                 }
+            }
+
+            .document-nav-trigger {
+                left: auto
+                right: 0
             }
         }
 
