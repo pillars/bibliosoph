@@ -18,13 +18,13 @@ $(window).load(function() {
 
         $('.document-nav, .document-nav-trigger').on('mouseenter', function() {
             clearTimeout(_closeDocumentNav);
-            $documentNav.css('display', 'block');
+            $documentNav.addClass('show');
             _documentNavVisible = true;
         })
 
         $('.document-nav, .document-nav-trigger').on('mouseleave', function() {
             _closeDocumentNav = setTimeout(function() {
-                $documentNav.css('display', 'none');
+                $documentNav.removeClass('show');
                 _documentNavVisible = false;
             }, 1000);
         })
@@ -32,12 +32,12 @@ $(window).load(function() {
         $('.document-nav-trigger').on('click', function(event) {
             event.preventDefault();
             if (_documentNavVisible) {
-                $documentNav.css('display', 'none');
+                $documentNav.removeClass('show');
                 _documentNavVisible = false;
             }
             else {
                 clearTimeout(_closeDocumentNav);
-                $documentNav.css('display', 'block');
+                $documentNav.addClass('show');
                 _documentNavVisible = true;
             }
         })

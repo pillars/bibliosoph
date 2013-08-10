@@ -288,6 +288,10 @@ $main_menu_width = h(4)
     width: 212px
     z-index: $z-document-nav
 
+    &.show {
+        display: block !important
+    }
+
     &.fixed {
         position: fixed
         left: 0
@@ -446,14 +450,6 @@ body.left-nav-narrow {
         left: $main_menu_narrow_width
     }
 
-    .document-nav {
-        border-right: none
-        border-left: 1px solid $right_col_border
-        left: auto !important
-        right: 0
-        padding-bottom: h(3)
-    }
-
     .document-nav.fixed {
         left: $main_menu_narrow_width
     }
@@ -608,6 +604,14 @@ body.bottom-nav {
 
     .page-body {
         left: 0
+    }
+
+    .document-nav {
+        border-right: none
+        border-left: 1px solid $right_col_border
+        left: auto !important
+        right: 0
+        padding-bottom: h(3)
     }
 
     .document-nav.fixed {
